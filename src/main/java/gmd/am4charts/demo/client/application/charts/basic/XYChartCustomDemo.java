@@ -129,11 +129,6 @@ public class XYChartCustomDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "XY Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

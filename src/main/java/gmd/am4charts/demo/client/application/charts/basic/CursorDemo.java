@@ -95,11 +95,6 @@ public class CursorDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Cursor";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

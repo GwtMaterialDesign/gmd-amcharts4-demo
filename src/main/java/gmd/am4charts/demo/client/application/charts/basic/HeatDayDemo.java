@@ -65,11 +65,6 @@ public class HeatDayDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Heat Days";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

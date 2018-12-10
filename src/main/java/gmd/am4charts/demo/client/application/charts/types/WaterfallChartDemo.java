@@ -67,11 +67,6 @@ public class WaterfallChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Waterfall Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

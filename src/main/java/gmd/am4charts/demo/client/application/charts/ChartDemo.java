@@ -7,8 +7,6 @@ public interface ChartDemo {
 
     void generate(Widget container);
 
-    String getTitle();
-
     String getSourceCode();
 
     Chart getChart();

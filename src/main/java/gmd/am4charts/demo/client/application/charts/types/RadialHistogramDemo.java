@@ -67,11 +67,6 @@ public class RadialHistogramDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Radial Histogram";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

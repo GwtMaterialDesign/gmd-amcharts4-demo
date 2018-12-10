@@ -44,11 +44,6 @@ public class LineGraphDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Line Graph";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

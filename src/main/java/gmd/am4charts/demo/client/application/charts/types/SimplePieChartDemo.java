@@ -36,11 +36,6 @@ public class SimplePieChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Simple Pie Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

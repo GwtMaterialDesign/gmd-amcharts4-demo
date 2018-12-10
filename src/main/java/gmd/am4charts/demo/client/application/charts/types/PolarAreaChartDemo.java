@@ -81,11 +81,6 @@ public class PolarAreaChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Polar Area Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

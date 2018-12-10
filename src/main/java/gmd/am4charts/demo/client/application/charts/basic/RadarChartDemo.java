@@ -36,11 +36,6 @@ public class RadarChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Radar Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

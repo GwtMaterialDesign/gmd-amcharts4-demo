@@ -54,11 +54,6 @@ public class CurvedColumnsDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Curved Columns";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

@@ -35,11 +35,6 @@ public class ConfigFieldDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Config Fields";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

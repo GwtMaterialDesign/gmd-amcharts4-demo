@@ -53,11 +53,6 @@ public class StepLineChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Step Line Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

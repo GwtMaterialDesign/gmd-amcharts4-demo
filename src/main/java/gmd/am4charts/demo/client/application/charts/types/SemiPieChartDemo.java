@@ -42,11 +42,6 @@ public class SemiPieChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Semi Pie Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

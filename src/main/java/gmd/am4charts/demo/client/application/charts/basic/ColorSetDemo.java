@@ -39,11 +39,6 @@ public class ColorSetDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Color Set";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

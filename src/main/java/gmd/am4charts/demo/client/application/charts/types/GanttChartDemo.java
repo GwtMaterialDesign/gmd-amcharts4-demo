@@ -70,11 +70,6 @@ public class GanttChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Gantt Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

@@ -13,6 +13,7 @@ import gwt.material.design.amcharts.client.series.ColumnSeries;
 import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.base.Percent;
 import gwt.material.design.amcore.client.color.Color;
+import gwt.material.design.amcore.client.constants.Orientation;
 import gwt.material.design.amcore.client.properties.HeatRule;
 
 public class HeatLegendDemo implements ChartDemo {
@@ -50,7 +51,7 @@ public class HeatLegendDemo implements ChartDemo {
         heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
         heatLegend.valueAxis.renderer.minGridDistance = 30;
         // Change orientation
-        //heatLegend.orientation = Orientation.VERTICAL;z
+        heatLegend.orientation = Orientation.VERTICAL;
 
         // Color steps
         heatLegend.markerCount = 10;
@@ -70,11 +71,6 @@ public class HeatLegendDemo implements ChartDemo {
         });
 
         chart.dataSource.url = "data/heat.json";
-    }
-
-    @Override
-    public String getTitle() {
-        return "Heat Legend";
     }
 
     @Override

@@ -83,11 +83,6 @@ public class AngularGaugeDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Angular Gauge";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

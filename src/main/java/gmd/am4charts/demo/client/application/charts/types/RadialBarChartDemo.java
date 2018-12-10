@@ -97,11 +97,6 @@ public class RadialBarChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Bubble Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

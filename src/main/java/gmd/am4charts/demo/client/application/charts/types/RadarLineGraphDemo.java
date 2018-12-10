@@ -62,11 +62,6 @@ public class RadarLineGraphDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Radial line graph";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

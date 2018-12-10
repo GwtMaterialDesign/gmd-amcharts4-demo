@@ -24,11 +24,6 @@ public class SlicedPyramidChart implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Sliced Pyramid Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

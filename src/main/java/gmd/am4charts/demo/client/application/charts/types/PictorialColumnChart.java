@@ -87,11 +87,6 @@ public class PictorialColumnChart implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Pictorial Column Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

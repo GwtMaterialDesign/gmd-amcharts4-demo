@@ -71,11 +71,6 @@ public class StackedBarDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Stacked Area Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

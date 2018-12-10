@@ -50,11 +50,6 @@ public class PictorialFractionDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Pictorial Fraction";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

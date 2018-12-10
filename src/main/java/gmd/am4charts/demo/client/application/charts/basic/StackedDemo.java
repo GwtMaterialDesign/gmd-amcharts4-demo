@@ -34,8 +34,8 @@ public class StackedDemo implements ChartDemo {
         marker.cornerRadius(12, 12, 12, 12);
         marker.strokeWidth = 2;
         marker.strokeOpacity = 1;
-        //marker.width = 80;
-        //marker.height = 80;
+        marker.width = 80;
+        marker.height = 80;
         marker.stroke = new Color("#ccc");
 
         chart.legend.itemContainers.template.events.on("hit", param1 -> {
@@ -97,11 +97,6 @@ public class StackedDemo implements ChartDemo {
         series4.dataFields.categoryX = "category";
         series4.dataFields.valueY = "value4";
         series4.stacked = true;
-    }
-
-    @Override
-    public String getTitle() {
-        return "Stacked";
     }
 
     @Override

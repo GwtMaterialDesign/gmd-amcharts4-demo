@@ -68,11 +68,6 @@ public class DumbbellPlotDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Dumbbell plot";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

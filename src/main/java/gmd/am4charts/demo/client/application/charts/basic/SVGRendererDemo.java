@@ -37,11 +37,6 @@ public class SVGRendererDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "SVG Renderer";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

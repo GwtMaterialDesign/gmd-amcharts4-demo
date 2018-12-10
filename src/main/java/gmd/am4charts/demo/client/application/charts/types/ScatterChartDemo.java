@@ -91,11 +91,6 @@ public class ScatterChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Scatter Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

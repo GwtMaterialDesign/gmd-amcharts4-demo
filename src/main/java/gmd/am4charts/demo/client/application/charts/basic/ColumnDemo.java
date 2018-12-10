@@ -65,7 +65,6 @@ public class ColumnDemo implements ChartDemo {
         scrollbarX.series.push(columnSeries);
         xyChart.scrollbarX = scrollbarX;
         xyChart.scrollbarX.updateWhileMoving = false;
-        // TODO : Just a workaround to hide the chart
         //xyChart.height = 60;
         // Cursor
         xyChart.cursor = new XYCursor();
@@ -79,11 +78,6 @@ public class ColumnDemo implements ChartDemo {
             dateAxis.zoomToDates(JsDate.create(new Date(117, 11, 1).getTime()), JsDate.create(new Date(117, 11, 31).getTime()));
             MaterialToast.fireToast("Event Fired: datavalidated");
         }, this);
-    }
-
-    @Override
-    public String getTitle() {
-        return "Column Chart";
     }
 
     @Override

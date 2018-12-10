@@ -68,11 +68,6 @@ public class SimpleTreemap implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Simple Tree Map";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

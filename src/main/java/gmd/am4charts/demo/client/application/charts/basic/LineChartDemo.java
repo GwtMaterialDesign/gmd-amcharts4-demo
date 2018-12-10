@@ -65,11 +65,6 @@ public class LineChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Line Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

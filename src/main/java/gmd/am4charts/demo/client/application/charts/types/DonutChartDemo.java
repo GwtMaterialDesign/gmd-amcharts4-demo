@@ -47,11 +47,6 @@ public class DonutChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Donut Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

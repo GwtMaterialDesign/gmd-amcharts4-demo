@@ -26,11 +26,6 @@ public class SankeyDiagramDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Sankey Diagram Set";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

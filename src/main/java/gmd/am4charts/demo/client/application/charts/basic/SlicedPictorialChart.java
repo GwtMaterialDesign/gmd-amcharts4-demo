@@ -27,11 +27,6 @@ public class SlicedPictorialChart implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Sliced (Funnel) Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

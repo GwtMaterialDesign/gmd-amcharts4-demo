@@ -50,11 +50,6 @@ public class PictorialStackedChart implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Pictorial Stacked Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

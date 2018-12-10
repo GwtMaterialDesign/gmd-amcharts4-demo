@@ -91,11 +91,6 @@ public class ChordDiagramNonRibbonDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Chord Diagram Non-Ribbon";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

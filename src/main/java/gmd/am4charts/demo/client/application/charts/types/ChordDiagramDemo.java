@@ -38,11 +38,6 @@ public class ChordDiagramDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Chord Diagram";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

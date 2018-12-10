@@ -53,11 +53,6 @@ public class GaugeDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Gauge";
-}
-
-    @Override
     public String getSourceCode() {
         return null;
     }

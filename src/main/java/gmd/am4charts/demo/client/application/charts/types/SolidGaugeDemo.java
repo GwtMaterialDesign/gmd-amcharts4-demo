@@ -73,11 +73,6 @@ public class SolidGaugeDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Solid Gauge";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

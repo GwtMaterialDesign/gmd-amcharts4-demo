@@ -51,11 +51,6 @@ public class NestedDonutChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Nested Donut Chart";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }

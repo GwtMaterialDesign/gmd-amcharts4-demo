@@ -169,11 +169,6 @@ public class SparklineDemo implements ChartDemo {
     }
 
     @Override
-    public String getTitle() {
-        return "Sparkline";
-    }
-
-    @Override
     public String getSourceCode() {
         return null;
     }
