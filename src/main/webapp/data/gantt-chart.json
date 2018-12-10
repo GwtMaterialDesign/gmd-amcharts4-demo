@@ -1,0 +1,62 @@
+[
+  {
+    "name": "John",
+    "fromDate": "2018-01-01 08:00",
+    "toDate": "2018-01-01 10:00",
+    "color": "#f44336"
+  },
+  {
+    "name": "John",
+    "fromDate": "2018-01-01 12:00",
+    "toDate": "2018-01-01 15:00",
+    "color": "#e91e63"
+  },
+  {
+    "name": "John",
+    "fromDate": "2018-01-01 15:30",
+    "toDate": "2018-01-01 21:30",
+    "color": "#9c27b0"
+  },
+  {
+    "name": "Jane",
+    "fromDate": "2018-01-01 09:00",
+    "toDate": "2018-01-01 12:00",
+    "color": "#673ab7"
+  },
+  {
+    "name": "Jane",
+    "fromDate": "2018-01-01 13:00",
+    "toDate": "2018-01-01 17:00",
+    "color": "#3f51b5"
+  },
+  {
+    "name": "Peter",
+    "fromDate": "2018-01-01 11:00",
+    "toDate": "2018-01-01 16:00",
+    "color": "#2196f3"
+  },
+  {
+    "name": "Peter",
+    "fromDate": "2018-01-01 16:00",
+    "toDate": "2018-01-01 19:00",
+    "color": "#03a9f4"
+  },
+  {
+    "name": "Melania",
+    "fromDate": "2018-01-01 16:00",
+    "toDate": "2018-01-01 20:00",
+    "color": "#00bcd4"
+  },
+  {
+    "name": "Melania",
+    "fromDate": "2018-01-01 20:30",
+    "toDate": "2018-01-01 24:00",
+    "color": "#009688"
+  },
+  {
+    "name": "Donald",
+    "fromDate": "2018-01-01 13:00",
+    "toDate": "2018-01-01 24:00",
+    "color": "#eeff41"
+  }
+]

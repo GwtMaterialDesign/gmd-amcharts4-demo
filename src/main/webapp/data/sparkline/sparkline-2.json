@@ -1,0 +1,11 @@
+[
+  { "date": "Jan 1, 2017", "value": 22 },
+  { "date": "Jan 2, 2017", "value": 25 },
+  { "date": "Jan 3, 2017", "value": 40 },
+  { "date": "Jan 4, 2017", "value": 35 },
+  { "date": "Jan 5, 2017", "value": 29 },
+  { "date": "Jan 6, 2017", "value": 1 },
+  { "date": "Jan 7, 2017", "value": 15 },
+  { "date": "Jan 8, 2017", "value": 29 },
+  { "date": "Jan 9, 2017", "value": 33, "opacity": 1 }
+]

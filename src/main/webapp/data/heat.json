@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Research",
+    "value": 450
+  },
+  {
+    "category": "Marketing",
+    "value": 1200
+  },
+  {
+    "category": "Distribution",
+    "value": 1850
+  },
+  {
+    "category": "HR",
+    "value": 850
+  },
+  {
+    "category": "Sales",
+    "value": 499
+  },
+  {
+    "category": "Support",
+    "value": 871
+  },
+  {
+    "category": "Other",
+    "value": 512
+  }
+]
