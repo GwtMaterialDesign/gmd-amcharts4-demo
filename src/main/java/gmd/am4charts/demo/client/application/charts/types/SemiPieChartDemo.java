@@ -42,8 +42,8 @@ public class SemiPieChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11070_none.png";
     }
 
     @Override

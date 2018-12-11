@@ -2,6 +2,7 @@ package gmd.am4charts.demo.client.application.charts.types;
 
 import com.google.gwt.user.client.ui.Widget;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.charts.propertyfields.MyCustomPropertyField;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.XYChart;
@@ -44,7 +45,11 @@ public class BubbleChartDemo implements ChartDemo {
 
         CircleBullet bullet = (CircleBullet) series.bullets.push(new CircleBullet());
         bullet.fill = new Color("#ff0000");
-        bullet.propertyFields.fill = "color";
+
+        MyCustomPropertyField propertyFields = new MyCustomPropertyField();
+        propertyFields.fill = "color";
+
+        bullet.propertyFields = propertyFields;
         bullet.strokeOpacity = 0;
         bullet.strokeWidth = 2;
         bullet.fillOpacity = 0.7;
@@ -74,8 +79,8 @@ public class BubbleChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_602_none-2-1024x690.png";
     }
 
     @Override

@@ -17,13 +17,8 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application.basic;
+package gmd.am4charts.demo.client.application.page.charttypes;
 
-import gmd.am4charts.demo.client.application.ApplicationPresenter;
-import gmd.am4charts.demo.client.application.events.ApplyThemeEvent;
-import gmd.am4charts.demo.client.application.charts.ChartDemo;
-import gmd.am4charts.demo.client.application.service.ChartService;
-import gmd.am4charts.demo.client.place.NameTokens;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
@@ -31,10 +26,15 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import gmd.am4charts.demo.client.application.ApplicationPresenter;
+import gmd.am4charts.demo.client.application.events.ApplyThemeEvent;
+import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.service.ChartService;
+import gmd.am4charts.demo.client.place.NameTokens;
 
 import java.util.List;
 
-public class BasicPresenter extends Presenter<BasicPresenter.MyView, BasicPresenter.MyProxy>
+public class ChartTypesPresenter extends Presenter<ChartTypesPresenter.MyView, ChartTypesPresenter.MyProxy>
         implements ApplyThemeEvent.ApplyThemeHandler {
 
     interface MyView extends View {
@@ -42,12 +42,12 @@ public class BasicPresenter extends Presenter<BasicPresenter.MyView, BasicPresen
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.BASIC)
-    interface MyProxy extends ProxyPlace<BasicPresenter> {
+    @NameToken(NameTokens.TYPES)
+    interface MyProxy extends ProxyPlace<ChartTypesPresenter> {
     }
 
     @Inject
-    BasicPresenter(
+    ChartTypesPresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -65,11 +65,11 @@ public class BasicPresenter extends Presenter<BasicPresenter.MyView, BasicPresen
     protected void onReveal() {
         super.onReveal();
 
-        getView().build(ChartService.getBasic());
+        getView().build(ChartService.getCharts());
     }
 
     @Override
     public void onApplyThemeEvent(ApplyThemeEvent event) {
-        getView().build(ChartService.getBasic());
+        getView().build(ChartService.getCharts());
     }
 }

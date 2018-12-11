@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ChartService {
 
-    public static List<ChartDemo> getBasic() {
+    public static List<ChartDemo> getPoc() {
         List<ChartDemo> demos = new ArrayList<>();
         demos.add(new ChordDiagramDemo());
         demos.add(new ColorSetDemo());
@@ -33,10 +33,10 @@ public class ChartService {
         return demos;
     }
 
-    public static List<ChartDemo> getTypes() {
+    public static List<ChartDemo> getCharts() {
         List<ChartDemo> demos = new ArrayList<>();
 
-        demos.add(new StackedAreaDemo   ());
+        demos.add(new StackedAreaDemo());
         demos.add(new SimplePieChartDemo());
         demos.add(new BubbleChartDemo());
         demos.add(new ChordDiagramNonRibbonDemo());
@@ -67,12 +67,15 @@ public class ChartService {
         demos.add(new ScatterChartDemo());
         demos.add(new StepLineChartDemo());
         demos.add(new GanttChartDemo());
-        demos.add(new StackedDemo());
 
         //TODO: Map with bubbles
         //TODO: Bullet Chart
         //TODO: RangeAreaChart
         //TODO: Population Pyramid
         return demos;
+    }
+
+    public static ChartDemo getChart(int index) {
+        return getCharts().get(index);
     }
 }

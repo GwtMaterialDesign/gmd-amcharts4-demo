@@ -35,7 +35,7 @@ public class ConfigFieldDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
+    public String getImage() {
         return null;
     }
 

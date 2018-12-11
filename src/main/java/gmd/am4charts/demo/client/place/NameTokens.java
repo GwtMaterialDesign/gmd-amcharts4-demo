@@ -22,6 +22,6 @@ package gmd.am4charts.demo.client.place;
 public class NameTokens {
 
     public static final String BASIC = "/";
-    public static final String TYPES = "#types";
-    public static final String BUTTON = "#button";
+    public static final String TYPES = "types";
+    public static final String VIEWER = "viewer";
 }

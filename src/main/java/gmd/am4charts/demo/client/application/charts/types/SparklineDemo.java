@@ -2,6 +2,7 @@ package gmd.am4charts.demo.client.application.charts.types;
 
 import com.google.gwt.user.client.ui.Widget;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.charts.propertyfields.MyCustomPropertyField;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.PieChart;
@@ -85,8 +86,11 @@ public class SparklineDemo implements ChartDemo {
         CircleBullet bullet = (CircleBullet) series.bullets.push(new CircleBullet());
         bullet.circle.opacity = 0;
         bullet.circle.fill = color;
-        //TODO: Property Fields
-        //bullet.circle.propertyFields.opacity = "opacity";
+
+        MyCustomPropertyField propertyFields = new MyCustomPropertyField();
+        propertyFields.opacity = "opacity";
+        bullet.circle.propertyFields = propertyFields;
+
         bullet.circle.radius = 3;
 
         return chart;
@@ -128,8 +132,10 @@ public class SparklineDemo implements ChartDemo {
         series.dataFields.valueY = "value";
         series.strokeWidth = 0;
         series.fillOpacity = 0.5;
-        //TODO: Property Fields
-        // series.columns.template.propertyFields.fillOpacity = "opacity";
+
+        MyCustomPropertyField propertyFields = new MyCustomPropertyField();
+        propertyFields.fillOpacity = "opacity";
+        series.columns.template.propertyFields = propertyFields;
         series.columns.template.fill = color;
 
         return chart;
@@ -169,8 +175,8 @@ public class SparklineDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_1462_none.png";
     }
 
     @Override

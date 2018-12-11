@@ -97,8 +97,8 @@ public class RadialBarChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11287_none-1-1024x646.png";
     }
 
     @Override

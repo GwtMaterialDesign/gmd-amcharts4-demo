@@ -44,6 +44,11 @@ public class ClusteredBarChart implements ChartDemo {
         createSeries("expenses", "Expenses");
     }
 
+    @Override
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2014/02/demo_3957_none-1-1024x646.png";
+    }
+
     private void createSeries(String field, String name) {
         ColumnSeries series = (ColumnSeries) chart.series.push(new ColumnSeries());
         series.dataFields.valueX = field;
@@ -67,11 +72,6 @@ public class ClusteredBarChart implements ChartDemo {
         categoryLabel.label.fill = new Color("#fff");
         categoryLabel.label.hideOversized = false;
         categoryLabel.label.truncate = false;
-    }
-
-    @Override
-    public String getSourceCode() {
-        return null;
     }
 
     @Override

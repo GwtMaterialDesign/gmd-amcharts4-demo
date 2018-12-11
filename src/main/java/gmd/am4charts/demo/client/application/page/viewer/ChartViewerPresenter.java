@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application.test;
+package gmd.am4charts.demo.client.application.page.viewer;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -25,24 +25,49 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
+import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import gmd.am4charts.demo.client.application.ApplicationPresenter;
+import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.service.ChartService;
 import gmd.am4charts.demo.client.place.NameTokens;
+import gwt.material.design.amcharts.client.Chart;
+import gwt.material.design.client.ui.MaterialToast;
 
-public class ButtonPresenter extends Presenter<ButtonPresenter.MyView, ButtonPresenter.MyProxy> {
+public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView, ChartViewerPresenter.MyProxy> {
+
     interface MyView extends View {
+        void renderChart(ChartDemo demo);
     }
 
+    PlaceManager placeManager;
+
     @ProxyStandard
-    @NameToken(NameTokens.BUTTON)
-    interface MyProxy extends ProxyPlace<ButtonPresenter> {
+    @NameToken(NameTokens.VIEWER)
+    interface MyProxy extends ProxyPlace<ChartViewerPresenter> {
     }
 
     @Inject
-    ButtonPresenter(
+    ChartViewerPresenter(
             EventBus eventBus,
             MyView view,
-            MyProxy proxy) {
+            MyProxy proxy, PlaceManager placeManager) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
+
+        this.placeManager = placeManager;
+    }
+
+    @Override
+    protected void onReveal() {
+        super.onReveal();
+
+        String keyValue = placeManager.getCurrentPlaceRequest().getParameter("key", "0");
+        int parsedValue = Integer.parseInt(keyValue);
+
+        if (parsedValue > -1) {
+            ChartDemo demo = ChartService.getChart(parsedValue);
+            getView().renderChart(demo);
+        }
     }
 }

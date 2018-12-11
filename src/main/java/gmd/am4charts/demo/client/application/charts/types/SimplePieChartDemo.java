@@ -36,9 +36,10 @@ public class SimplePieChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_7403_none.png";
     }
+
 
     @Override
     public Chart getChart() {

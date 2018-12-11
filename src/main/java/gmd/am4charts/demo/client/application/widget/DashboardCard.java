@@ -22,41 +22,73 @@ package gmd.am4charts.demo.client.application.widget;
 
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.logical.shared.AttachEvent;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+import gmd.am4charts.demo.client.application.charts.ChartDemo;
 import gmd.am4charts.demo.client.application.navigation.Dashboard;
-import gwt.material.design.client.ui.MaterialImage;
-import gwt.material.design.client.ui.MaterialLabel;
+import gmd.am4charts.demo.client.application.service.ChartService;
+import gwt.material.design.client.ui.*;
 
 public class DashboardCard extends Composite {
 
     private static DashboardCardUiBinder uiBinder = GWT.create(DashboardCardUiBinder.class);
+    private final String titleText;
 
     interface DashboardCardUiBinder extends UiBinder<Widget, DashboardCard> {
     }
+
+    static String githubUrl = "https://github.com/GwtMaterialDesign/gmd-am4charts-demo/tree/master/src/main/java/";
+
+    @UiField
+    MaterialCard card;
 
     @UiField
     MaterialImage image;
 
     @UiField
-    MaterialLabel title, description;
+    MaterialLabel title;
 
-    private Dashboard dashboard;
+    @UiField
+    MaterialLink source;
 
-    public DashboardCard(Dashboard dashboard) {
+    private int index = 0;
+    private ChartDemo demo;
+
+    public DashboardCard(int index, String titleText, ChartDemo demo) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        this.dashboard = dashboard;
+        this.index = index;
+        this.titleText = titleText;
+        this.demo = demo;
     }
 
     @Override
     protected void onAttach() {
         super.onAttach();
 
-        image.setUrl(dashboard.getImage());
-        title.setText(dashboard.getTitle());
-        description.setText(dashboard.getDescription());
+        card.addClickHandler(event -> {
+            Window.open(GWT.getHostPageBaseURL() + "#viewer;key=" + index, "_self", "_self");
+        });
+
+        title.setText(cleanupTitle(titleText));
+        source.setTarget("_blank");
+        source.setHref(githubUrl + demo.getClass().getName().replace(".", "/") + ".java");
+
+        if (demo.getImage() != null) {
+            image.setUrl(demo.getImage());
+        }
+    }
+
+    static String cleanupTitle(String camelName) {
+        return camelName.replaceAll("([A-Z][a-z]+)", " $1") // Words beginning with UC
+                .replaceAll("([A-Z][A-Z]+)", " $1") // "Words" of only UC
+                .replaceAll("([^A-Za-z ]+)", " $1") // "Words" of non-letters
+                .replace("Demo", "")
+                .trim();
     }
 }

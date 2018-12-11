@@ -19,8 +19,7 @@
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:m="urn:import:gwt.material.design.client.ui"
-             xmlns:demo="urn:import:gmd.am4charts.demo.client.application.widget"
-             xmlns:chart="urn:import:gmd.am4charts.demo.client.application.widget.chart">
+             xmlns:demo="urn:import:gmd.am4charts.demo.client.application.widget">
 
     <ui:with field="res" type="gmd.am4charts.demo.client.resources.AppResources"/>
 
@@ -43,7 +42,6 @@
 
         <m:MaterialContainer paddingTop="64" addStyleNames="container">
             <m:MaterialRow marginTop="40" padding="20">
-                <chart:ThemeSelector ui:field="themeSelector" grid="s12"/>
                 <m:MaterialPanel ui:field="chartContent"/>
             </m:MaterialRow>
         </m:MaterialContainer>

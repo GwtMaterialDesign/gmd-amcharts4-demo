@@ -17,29 +17,29 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application.basic;
+package gmd.am4charts.demo.client.application.page.charttypes;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
-import gmd.am4charts.demo.client.application.renderer.ChartRenderer;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.renderer.ChartRenderer;
 import gwt.material.design.client.ui.MaterialRow;
 
 import javax.inject.Inject;
 import java.util.List;
 
-public class BasicView extends ViewImpl implements BasicPresenter.MyView {
+public class ChartTypesView extends ViewImpl implements ChartTypesPresenter.MyView {
 
-    interface Binder extends UiBinder<Widget, BasicView> {
+    interface Binder extends UiBinder<Widget, ChartTypesView> {
     }
 
     @UiField
     MaterialRow chartContainer;
 
     @Inject
-    BasicView(Binder uiBinder) {
+    ChartTypesView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 

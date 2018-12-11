@@ -48,19 +48,11 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
 
-    static final String DARK = "dark";
-
     @UiField
     MaterialNavSection navSection;
 
     @UiField
     MaterialPanel chartContent;
-
-    @UiField
-    ThemeSelector themeSelector;
-
-    @Inject
-    Provider<ApplicationPresenter> presenterProvider;
 
     @Inject
     ApplicationView(Binder uiBinder) {
@@ -89,16 +81,6 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
         // Remove Splashscreen once js files are loaded
         Document.get().getElementById("splashscreen").removeFromParent();
-
-        // Theme Selection for Charts
-        themeSelector.setCallback((theme) -> {
-            if (theme != null && theme.getClass().equals(DarkTheme.class)) {
-                RootPanel.get().addStyleName(DARK);
-            } else {
-                RootPanel.get().removeStyleName(DARK);
-            }
-            presenterProvider.get().applyTheme();
-        });
     }
 
     @Override

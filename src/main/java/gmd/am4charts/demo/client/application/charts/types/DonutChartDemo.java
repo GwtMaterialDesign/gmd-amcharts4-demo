@@ -47,8 +47,8 @@ public class DonutChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/11/demo_129_none.png";
     }
 
     @Override

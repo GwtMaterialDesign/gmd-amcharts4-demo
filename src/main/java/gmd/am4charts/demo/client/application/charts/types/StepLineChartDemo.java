@@ -53,8 +53,8 @@ public class StepLineChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_7399_none-1-1024x646.png";
     }
 
     @Override

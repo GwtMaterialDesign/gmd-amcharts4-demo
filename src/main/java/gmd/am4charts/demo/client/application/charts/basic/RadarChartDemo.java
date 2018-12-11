@@ -36,7 +36,7 @@ public class RadarChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
+    public String getImage() {
         return null;
     }
 

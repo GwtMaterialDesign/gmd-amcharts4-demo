@@ -129,7 +129,7 @@ public class XYChartCustomDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
+    public String getImage() {
         return null;
     }
 

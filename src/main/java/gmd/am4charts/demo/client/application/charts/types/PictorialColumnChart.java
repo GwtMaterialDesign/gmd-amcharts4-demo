@@ -2,24 +2,19 @@ package gmd.am4charts.demo.client.application.charts.types;
 
 import com.google.gwt.user.client.ui.Widget;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.charts.propertyfields.MyCustomPropertyField;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.XYChart;
 import gwt.material.design.amcharts.client.axis.CategoryAxis;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
 import gwt.material.design.amcharts.client.bullet.Bullet;
-import gwt.material.design.amcharts.client.bullet.CircleBullet;
 import gwt.material.design.amcharts.client.bullet.LabelBullet;
-import gwt.material.design.amcharts.client.cursor.XYCursor;
-import gwt.material.design.amcharts.client.properties.CircleBulletProperties;
-import gwt.material.design.amcharts.client.scrollbar.XYChartScrollbar;
 import gwt.material.design.amcharts.client.series.ColumnSeries;
-import gwt.material.design.amcharts.client.series.LineSeries;
 import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.base.Percent;
 import gwt.material.design.amcore.client.color.Color;
 import gwt.material.design.amcore.client.color.LinearGradient;
-import gwt.material.design.amcore.client.properties.HeatRule;
 import gwt.material.design.amcore.client.properties.SpriteProperties;
 import gwt.material.design.amcore.client.state.SpriteState;
 import gwt.material.design.amcore.client.ui.Image;
@@ -32,6 +27,9 @@ public class PictorialColumnChart implements ChartDemo {
     public void generate(Widget widget) {
         // Create chart instance
         chart = (XYChart) Am4Core.create(widget, Am4Charts.XYChart);
+
+        chart.dataSource.url = "data/pictorial-column-chart.json";
+
         chart.hiddenState.properties.opacity = 0;
         chart.defaultState.transitionDuration = 5000;
         // Create axes
@@ -64,15 +62,17 @@ public class PictorialColumnChart implements ChartDemo {
         SpriteState<SpriteProperties> hoverState = bullet.states.create("hover");
         hoverState.properties.opacity = 0.9;
 
-        //TODO: Rework property fields
         Image image = (Image) bullet.createChild(Am4Core.Image);
         image.horizontalCenter = "middle";
         image.verticalCenter = "top";
 
-        image.propertyFields.href = "icon";
-        image.height = new Percent(100);
-        image.propertyFields.widthRatio = "ratio";
+        // Property Fields Definition
+        MyCustomPropertyField propertyFields = new MyCustomPropertyField();
+        propertyFields.href = "icon";
+        propertyFields.widthRatio = "ratio";
+        image.propertyFields = propertyFields;
 
+        image.height = new Percent(100);
         bullet.events.on("positionchanged", event -> event.target.deepInvalidate());
         LabelBullet label = (LabelBullet) series.bullets.push(new LabelBullet());
         label.label.text = "{height} metres";
@@ -87,8 +87,8 @@ public class PictorialColumnChart implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11384_none.png";
     }
 
     @Override

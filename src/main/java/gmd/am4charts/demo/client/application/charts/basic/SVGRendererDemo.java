@@ -37,7 +37,7 @@ public class SVGRendererDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
+    public String getImage() {
         return null;
     }
 

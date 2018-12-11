@@ -62,8 +62,8 @@ public class RadarLineGraphDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_12382_none-1024x690.png";
     }
 
     @Override

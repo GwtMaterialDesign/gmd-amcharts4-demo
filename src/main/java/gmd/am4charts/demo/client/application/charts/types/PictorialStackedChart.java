@@ -50,8 +50,8 @@ public class PictorialStackedChart implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11421_none.png";
     }
 
     @Override

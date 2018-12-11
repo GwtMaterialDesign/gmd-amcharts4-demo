@@ -39,13 +39,13 @@ public class FunnelChartDemo implements ChartDemo {
         chart.legend.margin(5,5,20,5);
     }
 
-    private void randomValue(ClockHand hand) {
-        hand.showValue(Math.random() * 100, 1000, Am4Core.ease.cubicOut);
+    @Override
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/11/demo_123_none.png";
     }
 
-    @Override
-    public String getSourceCode() {
-        return null;
+    private void randomValue(ClockHand hand) {
+        hand.showValue(Math.random() * 100, 1000, Am4Core.ease.cubicOut);
     }
 
     @Override

@@ -1,6 +1,6 @@
 const args = process.argv;
 const arguments = args.slice(2);
-
+const output = "src/main/webapp"
 const buildFolderName = arguments[0];
 const gwtModuleName = arguments[1];
 
@@ -45,7 +45,7 @@ fs.readFile("bin/sw-template.js", "utf8", (error, data) => {
     var template = Handlebars.compile(data);
     var serviceWorkerJs = template(swData);
 
-    fs.writeFile(rootFolder + "/service-worker.js", serviceWorkerJs, (error) => {
-        console.log("Successfully generated service worker service-worker.js in " + rootFolder);
+    fs.writeFile(output + "/service-worker.js", serviceWorkerJs, (error) => {
+        console.log("Successfully generated service worker service-worker.js in " + output);
     });
 });

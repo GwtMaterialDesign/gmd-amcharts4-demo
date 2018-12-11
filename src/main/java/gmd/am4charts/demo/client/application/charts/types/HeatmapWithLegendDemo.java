@@ -82,6 +82,11 @@ public class HeatmapWithLegendDemo implements ChartDemo {
         series.columns.template.events.on("out", event -> handleHover(event.target, heatLegend));
     }
 
+    @Override
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11040_none-2-1024x690.png";
+    }
+
     private void handleHover(Column column, HeatLegend heatLegend) {
         if (column.dataItem.value != null) {
             heatLegend.valueAxis.showTooltipAt(column.dataItem.value);
@@ -89,11 +94,6 @@ public class HeatmapWithLegendDemo implements ChartDemo {
         else {
             heatLegend.valueAxis.hideTooltip();
         }
-    }
-
-    @Override
-    public String getSourceCode() {
-        return null;
     }
 
     @Override

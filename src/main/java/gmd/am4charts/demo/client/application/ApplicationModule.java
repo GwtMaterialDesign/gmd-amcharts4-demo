@@ -20,17 +20,15 @@
 package gmd.am4charts.demo.client.application;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
-import gmd.am4charts.demo.client.application.basic.BasicModule;
-import gmd.am4charts.demo.client.application.charttypes.ChartTypesModule;
-import gmd.am4charts.demo.client.application.test.ButtonModule;
+import gmd.am4charts.demo.client.application.page.charttypes.ChartTypesModule;
+import gmd.am4charts.demo.client.application.page.viewer.ChartViewerModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
 
     @Override
     protected void configure() {
-        install(new BasicModule());
         install(new ChartTypesModule());
-        install(new ButtonModule());
+        install(new ChartViewerModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
                 ApplicationPresenter.MyProxy.class);

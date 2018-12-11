@@ -65,7 +65,7 @@ public class HeatDayDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
+    public String getImage() {
         return null;
     }
 

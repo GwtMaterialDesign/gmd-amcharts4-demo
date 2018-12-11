@@ -121,8 +121,8 @@ public class StackedAreaDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/11/demo_7379_none-2-1024x690.png";
     }
 
     @Override

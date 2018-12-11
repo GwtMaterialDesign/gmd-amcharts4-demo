@@ -78,13 +78,13 @@ public class AngularGaugeDemo implements ChartDemo {
         }, 2000);
     }
 
-    private void randomValue(ClockHand hand) {
-        hand.showValue(Math.random() * 100, 1000, Am4Core.ease.cubicOut);
+    @Override
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_7384_none-1-1024x690.png";
     }
 
-    @Override
-    public String getSourceCode() {
-        return null;
+    private void randomValue(ClockHand hand) {
+        hand.showValue(Math.random() * 100, 1000, Am4Core.ease.cubicOut);
     }
 
     @Override

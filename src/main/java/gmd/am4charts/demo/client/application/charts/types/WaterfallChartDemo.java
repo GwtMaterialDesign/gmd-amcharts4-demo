@@ -2,6 +2,7 @@ package gmd.am4charts.demo.client.application.charts.types;
 
 import com.google.gwt.user.client.ui.Widget;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.charts.propertyfields.MyCustomPropertyField;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.XYChart;
@@ -12,6 +13,7 @@ import gwt.material.design.amcharts.client.cursor.XYCursor;
 import gwt.material.design.amcharts.client.series.ColumnSeries;
 import gwt.material.design.amcharts.client.series.StepLineSeries;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.base.InterfaceColorSet;
 import gwt.material.design.amcore.client.ui.Label;
 
 public class WaterfallChartDemo implements ChartDemo {
@@ -40,7 +42,10 @@ public class WaterfallChartDemo implements ChartDemo {
 
         Column columnTemplate = columnSeries.columns.template;
         columnTemplate.strokeOpacity = 0;
-        columnTemplate.propertyFields.fill = "color";
+
+        MyCustomPropertyField propertyFields = new MyCustomPropertyField();
+        propertyFields.fill = "color";
+        columnTemplate.propertyFields = propertyFields;
 
         Label label = (Label) columnTemplate.createChild(Am4Core.Label);
         label.text = "{displayValue.formatNumber('$#,## a')}";
@@ -52,8 +57,8 @@ public class WaterfallChartDemo implements ChartDemo {
         stepSeries.dataFields.categoryX = "category";
         stepSeries.dataFields.valueY = "stepValue";
         stepSeries.noRisers = true;
-        //TODO
-        //stepSeries.stroke = new Am4Core().InterfaceColorSet().getFor("alternativeBackground");
+
+        stepSeries.stroke = new InterfaceColorSet().getFor("alternativeBackground");
         stepSeries.strokeDasharray = "3,3";
         stepSeries.interpolationDuration = 2000;
         stepSeries.sequencedInterpolation = true;
@@ -67,8 +72,8 @@ public class WaterfallChartDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_793_none-1-1024x690.png";
     }
 
     @Override

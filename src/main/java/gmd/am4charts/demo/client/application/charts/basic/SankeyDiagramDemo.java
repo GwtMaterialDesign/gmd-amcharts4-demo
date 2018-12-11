@@ -26,7 +26,7 @@ public class SankeyDiagramDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
+    public String getImage() {
         return null;
     }
 

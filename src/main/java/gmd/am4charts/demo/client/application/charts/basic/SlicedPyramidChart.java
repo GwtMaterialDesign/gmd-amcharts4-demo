@@ -24,8 +24,8 @@ public class SlicedPyramidChart implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2013/12/demo_7407_none-1.png";
     }
 
     @Override

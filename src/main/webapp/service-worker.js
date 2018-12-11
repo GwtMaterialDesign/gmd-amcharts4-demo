@@ -1,8 +1,92 @@
-var cacheName = 'dasdasdasdas';
+var cacheName = 'cache_1544533820827';
 
-var filesToCache = [
+var filesToCache = [  
+'GmdCoreDemo/A5121F92305657E5D3F9A5DD773A5613.cache.js',
 
-];
+'GmdCoreDemo/clear.cache.gif',
+
+'GmdCoreDemo/css/animation.css',
+
+'GmdCoreDemo/css/animation.min.css',
+
+'GmdCoreDemo/css/material-icons.css',
+
+'GmdCoreDemo/css/material-icons.min.css',
+
+'GmdCoreDemo/css/materialize.blue.css',
+
+'GmdCoreDemo/css/materialize.blue.min.css',
+
+'GmdCoreDemo/css/materialize.css',
+
+'GmdCoreDemo/css/materialize.min.css',
+
+'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.eot',
+
+'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.ttf',
+
+'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.woff',
+
+'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.woff2',
+
+'GmdCoreDemo/font/roboto/Roboto-Bold.ttf',
+
+'GmdCoreDemo/font/roboto/Roboto-Bold.woff',
+
+'GmdCoreDemo/font/roboto/Roboto-Bold.woff2',
+
+'GmdCoreDemo/font/roboto/Roboto-Light.ttf',
+
+'GmdCoreDemo/font/roboto/Roboto-Light.woff',
+
+'GmdCoreDemo/font/roboto/Roboto-Light.woff2',
+
+'GmdCoreDemo/font/roboto/Roboto-Medium.ttf',
+
+'GmdCoreDemo/font/roboto/Roboto-Medium.woff',
+
+'GmdCoreDemo/font/roboto/Roboto-Medium.woff2',
+
+'GmdCoreDemo/font/roboto/Roboto-Regular.ttf',
+
+'GmdCoreDemo/font/roboto/Roboto-Regular.woff',
+
+'GmdCoreDemo/font/roboto/Roboto-Regular.woff2',
+
+'GmdCoreDemo/font/roboto/Roboto-Thin.ttf',
+
+'GmdCoreDemo/font/roboto/Roboto-Thin.woff',
+
+'GmdCoreDemo/font/roboto/Roboto-Thin.woff2',
+
+'GmdCoreDemo/GmdCoreDemo.devmode.js',
+
+'GmdCoreDemo/GmdCoreDemo.nocache.js',
+
+'index.html',
+
+'launcher-icons/launcher1x.png',
+
+'launcher-icons/launcher2x.png',
+
+'launcher-icons/launcher4x.png',
+
+'launcher-icons/launcher5x.png',
+
+'service-worker.js',
+
+'splash/font/Roboto-Regular.eot',
+
+'splash/font/Roboto-Regular.ttf',
+
+'splash/font/Roboto-Regular.woff',
+
+'splash/font/Roboto-Regular.woff2',
+
+'splash/splash.css',
+
+'splash/splash.js'
+    ];
 
 /**
  * The install event is your chance to cache everything you need before being able to control clients. The promise you

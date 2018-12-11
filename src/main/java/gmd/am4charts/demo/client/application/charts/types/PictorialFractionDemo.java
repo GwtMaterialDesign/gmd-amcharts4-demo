@@ -5,12 +5,10 @@ import gmd.am4charts.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.SlicedChart;
-import gwt.material.design.amcharts.client.axis.AxisLabelCircular;
 import gwt.material.design.amcharts.client.legend.Legend;
 import gwt.material.design.amcharts.client.series.PictorialStackedSeries;
 import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.base.Sprite;
-import gwt.material.design.amcore.client.ui.Label;
 
 public class PictorialFractionDemo implements ChartDemo {
 
@@ -50,8 +48,8 @@ public class PictorialFractionDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_12331_none-2-1024x690.png";
     }
 
     @Override

@@ -16,7 +16,6 @@ import gwt.material.design.amcore.client.base.InterfaceColorSet;
 import gwt.material.design.amcore.client.base.MouseCursorStyle;
 import gwt.material.design.amcore.client.color.Color;
 
-//TODO: Event dispatcher is disposed
 public class SimpleTreemap implements ChartDemo {
 
     private TreeMap chart;
@@ -24,10 +23,10 @@ public class SimpleTreemap implements ChartDemo {
     @Override
     public void generate(Widget widget) {
         chart = (TreeMap) Am4Core.create(widget, Am4Charts.TreeMap);
-        //chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+        chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 
         chart.dataSource.url = "data/treemap.json";
-        /*chart.colors.step = 2;*/
+        chart.colors.step = 2;
 
         // define data fields
         chart.dataFields.value = "value";
@@ -35,7 +34,7 @@ public class SimpleTreemap implements ChartDemo {
         chart.dataFields.children = "children";
 
         chart.zoomable = false;
-        //Color bgColor = new InterfaceColorSet().getFor("background");
+        Color bgColor = new InterfaceColorSet().getFor("background");
 
         // level 0 series template
         TreeMapSeries level0SeriesTemplate = chart.seriesTemplates.create("0");
@@ -56,7 +55,7 @@ public class SimpleTreemap implements ChartDemo {
         level1ColumnTemplate.column.cornerRadius(10, 10, 10, 10);
         level1ColumnTemplate.fillOpacity = 1;
         level1ColumnTemplate.strokeWidth = 4;
-        //level1ColumnTemplate.stroke = bgColor;
+        level1ColumnTemplate.stroke = bgColor;
 
         Bullet bullet1 = level1SeriesTemplate.bullets.push(new LabelBullet());
         bullet1.locationY = 0.5;
@@ -68,8 +67,8 @@ public class SimpleTreemap implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11629_none.png";
     }
 
     @Override

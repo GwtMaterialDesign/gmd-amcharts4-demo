@@ -54,8 +54,8 @@ public class CurvedColumnsDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2018/11/demo_11411_none-3.png";
     }
 
     @Override

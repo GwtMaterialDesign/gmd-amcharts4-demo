@@ -73,8 +73,8 @@ public class SolidGaugeDemo implements ChartDemo {
     }
 
     @Override
-    public String getSourceCode() {
-        return null;
+    public String getImage() {
+        return "https://www.amcharts.com/wp-content/uploads/2016/03/demo_6604_none-2-1024x690.png";
     }
 
     @Override
