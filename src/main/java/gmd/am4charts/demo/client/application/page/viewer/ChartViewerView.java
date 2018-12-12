@@ -25,9 +25,11 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.widget.DashboardCard;
 import gmd.am4charts.demo.client.application.widget.chart.ThemeSelector;
-import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcore.client.theme.DarkTheme;
+import gwt.material.design.client.ui.MaterialLabel;
+import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialPanel;
 
 import javax.inject.Inject;
@@ -38,6 +40,12 @@ public class ChartViewerView extends ViewImpl implements ChartViewerPresenter.My
     }
 
     static final String DARK = "dark";
+
+    @UiField
+    MaterialLabel title;
+
+    @UiField
+    MaterialLink source;
 
     @UiField
     MaterialPanel chartContainer;
@@ -73,6 +81,10 @@ public class ChartViewerView extends ViewImpl implements ChartViewerPresenter.My
     @Override
     public void renderChart(ChartDemo demo) {
         this.demo = demo;
+
+        title.setText(DashboardCard.generateTitle(demo));
+        source.setTarget("_blank");
+        source.setHref(DashboardCard.generateSource(demo));
         demo.generate(chartContainer);
     }
 }

@@ -10,72 +10,70 @@ import java.util.List;
 
 public class ChartService {
 
-    public static List<ChartDemo> getPoc() {
-        List<ChartDemo> demos = new ArrayList<>();
-        demos.add(new ChordDiagramDemo());
-        demos.add(new ColorSetDemo());
-        demos.add(new ColumnDemo());
-        demos.add(new ConfigFieldDemo());
-        demos.add(new CursorDemo());
-        demos.add(new GaugeDemo());
-        demos.add(new HeatDayDemo());
-        demos.add(new HeatLegendDemo());
-        demos.add(new LineChartDemo());
-        demos.add(new PieChartDemo());
-        demos.add(new RadarChartDemo());
-        demos.add(new SankeyDiagramDemo());
-        demos.add(new SlicedFunnelChart());
-        demos.add(new SlicedPictorialChart());
-        demos.add(new SlicedPyramidChart());
-        demos.add(new StackedDemo());
-        demos.add(new SVGRendererDemo());
-        demos.add(new XYChartCustomDemo());
-        return demos;
+    static List<ChartDemo> charts = new ArrayList<>();
+    static List<ChartDemo> maps = new ArrayList<>();
+
+    static {
+        generateCharts();
+        generateMaps();
     }
 
-    public static List<ChartDemo> getCharts() {
-        List<ChartDemo> demos = new ArrayList<>();
+    private static void generateMaps() {
 
-        demos.add(new StackedAreaDemo());
-        demos.add(new SimplePieChartDemo());
-        demos.add(new BubbleChartDemo());
-        demos.add(new ChordDiagramNonRibbonDemo());
-        demos.add(new ChordDiagramDemo());
-        demos.add(new DumbbellPlotDemo());
-        demos.add(new RadialHistogramDemo());
-        demos.add(new PictorialFractionDemo());
-        demos.add(new PolarAreaChartDemo());
-        demos.add(new LineGraphDemo());
-        demos.add(new RadarLineGraphDemo());
-        demos.add(new CurvedColumnsDemo());
-        demos.add(new SolidGaugeDemo());
-        demos.add(new SimpleTreemap());
-        demos.add(new PictorialColumnChart());
-        demos.add(new PictorialStackedChart());
-        demos.add(new FunnelChartDemo());
-        demos.add(new AngularGaugeDemo());
-        demos.add(new SlicedPyramidChart());
-        demos.add(new HeatmapWithLegendDemo());
-        demos.add(new RadialBarChartDemo());
-        demos.add(new StackedBarDemo());
-        demos.add(new ClusteredBarChart());
-        demos.add(new SemiPieChartDemo());
-        demos.add(new NestedDonutChartDemo());
-        demos.add(new DonutChartDemo());
-        demos.add(new WaterfallChartDemo());
-        demos.add(new SparklineDemo());
-        demos.add(new ScatterChartDemo());
-        demos.add(new StepLineChartDemo());
-        demos.add(new GanttChartDemo());
+    }
+
+    private static void generateCharts() {
+        charts.add(new StackedAreaDemo());
+        charts.add(new SimplePieChartDemo());
+        charts.add(new BubbleChartDemo());
+        charts.add(new ChordDiagramNonRibbonDemo());
+        charts.add(new ChordDiagramDemo());
+        charts.add(new DumbbellPlotDemo());
+        charts.add(new RadialHistogramDemo());
+        charts.add(new PictorialFractionDemo());
+        charts.add(new PolarAreaChartDemo());
+        charts.add(new LineGraphDemo());
+        charts.add(new RadarLineGraphDemo());
+        charts.add(new CurvedColumnsDemo());
+        charts.add(new SolidGaugeDemo());
+        charts.add(new SimpleTreemap());
+        charts.add(new PictorialColumnChart());
+        charts.add(new PictorialStackedChart());
+        charts.add(new FunnelChartDemo());
+        charts.add(new AngularGaugeDemo());
+        charts.add(new SlicedPyramidChart());
+        charts.add(new HeatmapWithLegendDemo());
+        charts.add(new RadialBarChartDemo());
+        charts.add(new StackedBarDemo());
+        charts.add(new ClusteredBarChart());
+        charts.add(new SemiPieChartDemo());
+        charts.add(new NestedDonutChartDemo());
+        charts.add(new DonutChartDemo());
+        charts.add(new WaterfallChartDemo());
+        charts.add(new SparklineDemo());
+        charts.add(new ScatterChartDemo());
+        charts.add(new StepLineChartDemo());
+        charts.add(new GanttChartDemo());
 
         //TODO: Map with bubbles
         //TODO: Bullet Chart
         //TODO: RangeAreaChart
         //TODO: Population Pyramid
-        return demos;
+    }
+
+    public static List<ChartDemo> getCharts() {
+        return charts;
+    }
+
+    public static List<ChartDemo> getMaps() {
+        return maps;
     }
 
     public static ChartDemo getChart(int index) {
         return getCharts().get(index);
+    }
+
+    public static ChartDemo getMap(int index) {
+        return getMaps().get(index);
     }
 }

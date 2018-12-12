@@ -49,8 +49,7 @@ public class ThemeSelector extends MaterialPanel {
 
         clear();
 
-        label.setFontSize("1.6em");
-        label.setFontWeight(Style.FontWeight.BOLD);
+        label.setFontSize("1em");
         add(label);
         themeIcons.forEach(icon -> {
             icon.registerHandler(icon.addClickHandler(event -> setActive(icon)));

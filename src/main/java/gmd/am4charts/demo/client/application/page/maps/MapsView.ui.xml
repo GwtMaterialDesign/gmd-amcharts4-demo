@@ -18,16 +18,7 @@
   #L%
   -->
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:m="urn:import:gwt.material.design.client.ui"
-             xmlns:chart="urn:import:gmd.am4charts.demo.client.application.widget.chart">
+             xmlns:m="urn:import:gwt.material.design.client.ui">
 
-    <m:MaterialRow textAlign="CENTER">
-        <m:MaterialLabel ui:field="title" fontSize="2em"/>
-
-        <chart:ThemeSelector ui:field="themeSelector" grid="s12"/>
-        <m:MaterialPanel grid="s12">
-            <m:MaterialLink ui:field="source" text="Source Code" style="width: 140px;   display: block; margin-top: 20px;" iconType="CODE" iconColor="INDIGO" textColor="INDIGO" />
-        </m:MaterialPanel>
-        <m:MaterialPanel ui:field="chartContainer" height="400px" grid="s12"/>
-    </m:MaterialRow>
+    <m:MaterialRow ui:field="chartContainer"/>
 </ui:UiBinder>

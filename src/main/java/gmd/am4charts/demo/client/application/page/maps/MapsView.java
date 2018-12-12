@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application.page.charttypes;
+package gmd.am4charts.demo.client.application.page.maps;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -25,27 +25,26 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
 import gmd.am4charts.demo.client.application.renderer.ChartRenderer;
-import gmd.am4charts.demo.client.place.NameTokens;
 import gwt.material.design.client.ui.MaterialRow;
 
 import javax.inject.Inject;
 import java.util.List;
 
-public class ChartTypesView extends ViewImpl implements ChartTypesPresenter.MyView {
+public class MapsView extends ViewImpl implements MapsPresenter.MyView {
 
-    interface Binder extends UiBinder<Widget, ChartTypesView> {
+    interface Binder extends UiBinder<Widget, MapsView> {
     }
 
     @UiField
     MaterialRow chartContainer;
 
     @Inject
-    ChartTypesView(Binder uiBinder) {
+    MapsView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
     public void build(List<ChartDemo> demos) {
-        ChartRenderer.render(NameTokens.TYPES, chartContainer, demos);
+
     }
 }

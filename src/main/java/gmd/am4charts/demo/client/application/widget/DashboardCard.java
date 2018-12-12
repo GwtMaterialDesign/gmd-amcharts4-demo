@@ -22,22 +22,17 @@ package gmd.am4charts.demo.client.application.widget;
 
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.logical.shared.AttachEvent;
-import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
-import gmd.am4charts.demo.client.application.navigation.Dashboard;
-import gmd.am4charts.demo.client.application.service.ChartService;
 import gwt.material.design.client.ui.*;
 
 public class DashboardCard extends Composite {
 
     private static DashboardCardUiBinder uiBinder = GWT.create(DashboardCardUiBinder.class);
-    private final String titleText;
 
     interface DashboardCardUiBinder extends UiBinder<Widget, DashboardCard> {
     }
@@ -58,13 +53,14 @@ public class DashboardCard extends Composite {
 
     private int index = 0;
     private ChartDemo demo;
+    private String type;
 
-    public DashboardCard(int index, String titleText, ChartDemo demo) {
+    public DashboardCard(String type, int index, ChartDemo demo) {
         initWidget(uiBinder.createAndBindUi(this));
 
         this.index = index;
-        this.titleText = titleText;
         this.demo = demo;
+        this.type = type;
     }
 
     @Override
@@ -72,20 +68,24 @@ public class DashboardCard extends Composite {
         super.onAttach();
 
         card.addClickHandler(event -> {
-            Window.open(GWT.getHostPageBaseURL() + "#viewer;key=" + index, "_self", "_self");
+            Window.open(GWT.getHostPageBaseURL() + "#viewer;type=" + type + ";id=" + index, "_self", "_self");
         });
 
-        title.setText(cleanupTitle(titleText));
+        title.setText(generateTitle(demo));
         source.setTarget("_blank");
-        source.setHref(githubUrl + demo.getClass().getName().replace(".", "/") + ".java");
+        source.setHref(generateSource(demo));
 
         if (demo.getImage() != null) {
             image.setUrl(demo.getImage());
         }
     }
 
-    static String cleanupTitle(String camelName) {
-        return camelName.replaceAll("([A-Z][a-z]+)", " $1") // Words beginning with UC
+    public static String generateSource(ChartDemo demo) {
+        return githubUrl + demo.getClass().getName().replace(".", "/") + ".java";
+    }
+
+    public static String generateTitle(ChartDemo demo) {
+        return demo.getClass().getSimpleName().replaceAll("([A-Z][a-z]+)", " $1") // Words beginning with UC
                 .replaceAll("([A-Z][A-Z]+)", " $1") // "Words" of only UC
                 .replaceAll("([^A-Za-z ]+)", " $1") // "Words" of non-letters
                 .replace("Demo", "")

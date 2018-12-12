@@ -23,5 +23,6 @@ public class NameTokens {
 
     public static final String BASIC = "/";
     public static final String TYPES = "types";
+    public static final String MAPS = "maps";
     public static final String VIEWER = "viewer";
 }

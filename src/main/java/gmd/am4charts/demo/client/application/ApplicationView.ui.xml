@@ -41,14 +41,13 @@
         </m:MaterialHeader>
 
         <m:MaterialContainer paddingTop="64" addStyleNames="container">
-            <m:MaterialRow marginTop="40" padding="20">
+            <m:MaterialRow padding="20">
                 <m:MaterialPanel ui:field="chartContent"/>
             </m:MaterialRow>
         </m:MaterialContainer>
 
-        <m:MaterialFAB>
-            <m:MaterialButton ui:field="btnAdd" iconType="FILE_DOWNLOAD" type="FLOATING" size="LARGE"
-                              backgroundColor="WHITE" iconColor="GREY_DARKEN_4"/>
+        <m:MaterialFAB style="right: 10%; bottom: 5%;">
+            <m:MaterialAnchorButton href="https://github.com/GwtMaterialDesign/gwt-material-amcharts-v4" target="_blank" tooltip="Github Repository" tooltipPosition="LEFT" customIconType="fab fa-github" type="FLOATING" size="LARGE" backgroundColor="WHITE" iconColor="GREY_DARKEN_4"/>
         </m:MaterialFAB>
     </m:MaterialPanel>
 </ui:UiBinder>

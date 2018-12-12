@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,22 +17,14 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application;
+package gmd.am4charts.demo.client.application.page.maps;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
-import gmd.am4charts.demo.client.application.page.charttypes.ChartTypesModule;
-import gmd.am4charts.demo.client.application.page.maps.MapsModule;
-import gmd.am4charts.demo.client.application.page.viewer.ChartViewerModule;
 
-public class ApplicationModule extends AbstractPresenterModule {
-
+public class MapsModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        install(new ChartTypesModule());
-        install(new MapsModule());
-        install(new ChartViewerModule());
-
-        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
-                ApplicationPresenter.MyProxy.class);
+        bindPresenter(MapsPresenter.class, MapsPresenter.MyView.class, MapsView.class,
+                MapsPresenter.MyProxy.class);
     }
 }

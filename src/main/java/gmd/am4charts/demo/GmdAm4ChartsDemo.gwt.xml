@@ -38,6 +38,7 @@
     <inherits name="gwt.material.design.themes.ThemeBlue"/>
     <inherits name="gwt.material.design.amcharts.GwtMaterialAmCharts"/>
     <inherits name="gwt.material.design.ammaps.GwtMaterialAmMaps"/>
+    <inherits name="gwt.material.design.incubator.FontAwesomeResources"/>
 
     <inherits name="com.google.gwt.precompress.Precompress"/>
 
