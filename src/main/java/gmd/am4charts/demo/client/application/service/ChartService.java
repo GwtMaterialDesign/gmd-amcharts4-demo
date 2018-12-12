@@ -2,8 +2,12 @@ package gmd.am4charts.demo.client.application.service;
 
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
 import gmd.am4charts.demo.client.application.charts.basic.*;
+import gmd.am4charts.demo.client.application.charts.gauges.ClockDemo;
+import gmd.am4charts.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
+import gmd.am4charts.demo.client.application.charts.maps.*;
 import gmd.am4charts.demo.client.application.charts.types.*;
 import gmd.am4charts.demo.client.application.charts.types.ChordDiagramDemo;
+import gwt.material.design.amcharts.client.Chart;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +16,32 @@ public class ChartService {
 
     static List<ChartDemo> charts = new ArrayList<>();
     static List<ChartDemo> maps = new ArrayList<>();
+    static List<ChartDemo> gauges = new ArrayList<>();
 
     static {
         generateCharts();
         generateMaps();
+        generateGauges();
+    }
+
+    private static void generateGauges() {
+        gauges.add(new ClockDemo());
+        gauges.add(new ClockWithTwoFacesDemo());
     }
 
     private static void generateMaps() {
+        maps.add(new MultiSeriesMapDemo());
+        maps.add(new AnimationsAlongLine());
+        maps.add(new MapWithCurvedLinesDemo());
+        maps.add(new ZoomingToContriesMapDemo());
+        maps.add(new CapitalsMapDemo());
+        maps.add(new ChangingMapProjectionDemo());
+        maps.add(new UsHeatMap());
+        //TODO: Maps with Pattern
+        //TODO: Custom HTml
+        //TODO: Flight Routes
+        //TODO: Location Sensitive Map
+        //TODO: Group Countries Map
 
     }
 
@@ -69,6 +92,10 @@ public class ChartService {
         return maps;
     }
 
+    public static List<ChartDemo> getGauges() {
+        return gauges;
+    }
+
     public static ChartDemo getChart(int index) {
         return getCharts().get(index);
     }
@@ -76,4 +103,9 @@ public class ChartService {
     public static ChartDemo getMap(int index) {
         return getMaps().get(index);
     }
+
+    public static ChartDemo getGauge(int index) {
+        return getGauges().get(index);
+    }
+
 }

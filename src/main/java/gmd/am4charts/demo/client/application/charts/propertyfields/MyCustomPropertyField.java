@@ -27,4 +27,10 @@ public class MyCustomPropertyField {
 
     @JsProperty
     public String widthRatio;
+
+    @JsProperty
+    public String longitude;
+
+    @JsProperty
+    public String latitude;
 }

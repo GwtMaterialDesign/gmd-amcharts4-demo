@@ -2,14 +2,14 @@
  * #%L
  * GwtMaterial
  * %%
- * Copyright (C) 2015 - 2017 GwtMaterialDesign
+ * Copyright (C) 2015 - 2018 GwtMaterialDesign
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,13 +17,21 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.place;
+package gmd.am4charts.demo.client.application.charts.maps.geodata;
 
-public class NameTokens {
+import com.google.gwt.resources.client.TextResource;
+import gmd.am4charts.demo.client.resources.AppResources;
+import gwt.material.design.ammaps.client.geodata.Geodata;
 
-    public static final String BASIC = "/";
-    public static final String TYPES = "types";
-    public static final String MAPS = "maps";
-    public static final String GAUGES = "gauges";
-    public static final String VIEWER = "viewer";
+public class UsaAlersLow extends Geodata {
+
+    @Override
+    protected String getName() {
+        return "am4geodata_usaAlbersLow";
+    }
+
+    @Override
+    protected TextResource getJsResource() {
+        return AppResources.INSTANCE.usaAlbersLow();
+    }
 }

@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application.page.maps;
+package gmd.am4charts.demo.client.application.page.gauge;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -31,21 +31,21 @@ import gwt.material.design.client.ui.MaterialRow;
 import javax.inject.Inject;
 import java.util.List;
 
-public class MapsView extends ViewImpl implements MapsPresenter.MyView {
+public class GaugeView extends ViewImpl implements GaugePresenter.MyView {
 
-    interface Binder extends UiBinder<Widget, MapsView> {
+    interface Binder extends UiBinder<Widget, GaugeView> {
     }
 
     @UiField
     MaterialRow chartContainer;
 
     @Inject
-    MapsView(Binder uiBinder) {
+    GaugeView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
     public void build(List<ChartDemo> demos) {
-        ChartRenderer.render(NameTokens.MAPS, chartContainer, demos);
+        ChartRenderer.render(NameTokens.GAUGES, chartContainer, demos);
     }
 }
