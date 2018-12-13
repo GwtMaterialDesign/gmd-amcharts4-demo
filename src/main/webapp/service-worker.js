@@ -1,67 +1,95 @@
-var cacheName = 'cache_1544533820827';
+var cacheName = 'cache_1544697081249';
 
 var filesToCache = [  
-'GmdCoreDemo/A5121F92305657E5D3F9A5DD773A5613.cache.js',
+'GmdAm4ChartsDemo/05A804763291AA5E648FD0FBF7FF158B.cache.js',
 
-'GmdCoreDemo/clear.cache.gif',
+'GmdAm4ChartsDemo/clear.cache.gif',
 
-'GmdCoreDemo/css/animation.css',
+'GmdAm4ChartsDemo/css/animation.css',
 
-'GmdCoreDemo/css/animation.min.css',
+'GmdAm4ChartsDemo/css/animation.min.css',
 
-'GmdCoreDemo/css/material-icons.css',
+'GmdAm4ChartsDemo/css/fontawesome-all.css',
 
-'GmdCoreDemo/css/material-icons.min.css',
+'GmdAm4ChartsDemo/css/fontawesome-all.min.css',
 
-'GmdCoreDemo/css/materialize.blue.css',
+'GmdAm4ChartsDemo/css/material-icons.css',
 
-'GmdCoreDemo/css/materialize.blue.min.css',
+'GmdAm4ChartsDemo/css/material-icons.min.css',
 
-'GmdCoreDemo/css/materialize.css',
+'GmdAm4ChartsDemo/css/materialize.blue.css',
 
-'GmdCoreDemo/css/materialize.min.css',
+'GmdAm4ChartsDemo/css/materialize.blue.min.css',
 
-'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.eot',
+'GmdAm4ChartsDemo/css/materialize.css',
 
-'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.ttf',
+'GmdAm4ChartsDemo/css/materialize.min.css',
 
-'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.woff',
+'GmdAm4ChartsDemo/font/material-icons/MaterialIcons-Regular.eot',
 
-'GmdCoreDemo/font/material-icons/MaterialIcons-Regular.woff2',
+'GmdAm4ChartsDemo/font/material-icons/MaterialIcons-Regular.ttf',
 
-'GmdCoreDemo/font/roboto/Roboto-Bold.ttf',
+'GmdAm4ChartsDemo/font/material-icons/MaterialIcons-Regular.woff',
 
-'GmdCoreDemo/font/roboto/Roboto-Bold.woff',
+'GmdAm4ChartsDemo/font/material-icons/MaterialIcons-Regular.woff2',
 
-'GmdCoreDemo/font/roboto/Roboto-Bold.woff2',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Bold.ttf',
 
-'GmdCoreDemo/font/roboto/Roboto-Light.ttf',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Bold.woff',
 
-'GmdCoreDemo/font/roboto/Roboto-Light.woff',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Bold.woff2',
 
-'GmdCoreDemo/font/roboto/Roboto-Light.woff2',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Light.ttf',
 
-'GmdCoreDemo/font/roboto/Roboto-Medium.ttf',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Light.woff',
 
-'GmdCoreDemo/font/roboto/Roboto-Medium.woff',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Light.woff2',
 
-'GmdCoreDemo/font/roboto/Roboto-Medium.woff2',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Medium.ttf',
 
-'GmdCoreDemo/font/roboto/Roboto-Regular.ttf',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Medium.woff',
 
-'GmdCoreDemo/font/roboto/Roboto-Regular.woff',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Medium.woff2',
 
-'GmdCoreDemo/font/roboto/Roboto-Regular.woff2',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Regular.ttf',
 
-'GmdCoreDemo/font/roboto/Roboto-Thin.ttf',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Regular.woff',
 
-'GmdCoreDemo/font/roboto/Roboto-Thin.woff',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Regular.woff2',
 
-'GmdCoreDemo/font/roboto/Roboto-Thin.woff2',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Thin.ttf',
 
-'GmdCoreDemo/GmdCoreDemo.devmode.js',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Thin.woff',
 
-'GmdCoreDemo/GmdCoreDemo.nocache.js',
+'GmdAm4ChartsDemo/font/roboto/Roboto-Thin.woff2',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-brands-400.eot',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-brands-400.ttf',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-brands-400.woff',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-brands-400.woff2',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-regular-400.eot',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-regular-400.ttf',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-regular-400.woff',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-regular-400.woff2',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-solid-900.eot',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-solid-900.ttf',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-solid-900.woff',
+
+'GmdAm4ChartsDemo/fontawesome-icons/fa-solid-900.woff2',
+
+'GmdAm4ChartsDemo/GmdAm4ChartsDemo.devmode.js',
+
+'GmdAm4ChartsDemo/GmdAm4ChartsDemo.nocache.js',
 
 'index.html',
 

@@ -1,51 +1,223 @@
-<!--
-  #%L
-  GwtMaterial
-  %%
-  Copyright (C) 2015 - 2017 GwtMaterialDesign
-  %%
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-  
-       http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-  #L%
-  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>gwt-material-parent</artifactId>
+        <groupId>com.github.gwtmaterialdesign</groupId>
+        <version>2.2-SNAPSHOT</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.gwtmaterialdesign</groupId>
     <artifactId>gmd-am4charts-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>gwt-app</packaging>
+    <version>2.2-SNAPSHOT</version>
+    <name>Gmd Am4charts Demo</name>
+    <description>Showcase for Amcharts version 4</description>
 
-    <name>GmdAm4ChartsDemo</name>
-    <url>https://github.com/GwtMaterialDesign</url>
+    <prerequisites>
+        <maven>3.2.3</maven>
+    </prerequisites>
 
     <properties>
-        <app.id>gmd-am4charts-demo</app.id>
-        <app.version>1</app.version>
+        <!-- Don't let your Mac use a crazy non-standard encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Project properties -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.encoding>UTF-8</project.encoding>
+
+        <!-- GWT -->
         <gwt.version>2.8.2</gwt.version>
         <gwtp.version>1.6</gwtp.version>
         <gin.version>2.1.2</gin.version>
         <gwt-material.version>2.2-SNAPSHOT</gwt-material.version>
 
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
-        <appModuleName>gmd.am4charts.demo.GmdAm4ChartsDemo</appModuleName>
-        <appModuleShortName>GmdAm4ChartsDemo</appModuleShortName>
-
+        <!-- Maven -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        <junit.version>4.12</junit.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
     </properties>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+
+    <build>
+        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!-- License Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <licenseName>apache_v2</licenseName>
+                    <inceptionYear>2015</inceptionYear>
+                    <organizationName>GwtMaterialDesign</organizationName>
+                    <projectName>GwtMaterial</projectName>
+                    <includes>
+                        <include>**/*.java</include>
+                        <include>**/*.xml</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>license</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>update-file-header</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>${maven-compiler-plugin.version}</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- GPG Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+            </plugin>
+
+            <!-- Surefire Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/*GwtTest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- GWT Maven (TBroyer Plugin) -->
+            <plugin>
+                <groupId>net.ltgt.gwt.maven</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${tbroyer.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <moduleName>gmd.am4charts.demo.GmdAm4ChartsDemo</moduleName>
+                    <skipModule>true</skipModule>
+                    <style>OBFUSCATED</style>
+                    <logLevel>INFO</logLevel>
+                    <sourceLevel>1.8</sourceLevel>
+                    <jvmArgs>
+                        <jvmArg>-Xmx2g</jvmArg>
+                        <jvmArg>-Xms2g</jvmArg>
+                        <jvmArg>-XX:CompileThreshold=7000</jvmArg>
+                    </jvmArgs>
+                    <optimize>9</optimize>
+                    <compilerArgs>
+                        <compilerArg>-compileReport</compilerArg>
+                        <compilerArg>-XcompilerMetrics</compilerArg>
+                    </compilerArgs>
+                    <classpathScope>compile+runtime</classpathScope>
+                    <failOnError>true</failOnError>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Copy webapp content to deploy folder -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${webappDirectory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Service Worker Generator -->
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <nodeVersion>v9.0.0</nodeVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm generate</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <arguments>run-script generate ${project.build.finalName}</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>
@@ -60,131 +232,64 @@
         </repository>
     </repositories>
 
-    <build>
-        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-        <finalName>${project.name}</finalName>
-
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
-
-        <plugins>
-
-            <!-- GWT -->
-            <plugin>
-                <groupId>net.ltgt.gwt.maven</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <moduleName>${appModuleName}</moduleName>
-                    <moduleShortName>${appModuleShortName}</moduleShortName>
-                    <failOnError>true</failOnError>
-                    <sourceLevel>1.8</sourceLevel>
-                    <compilerArgs>
-                        <arg>-compileReport</arg>
-                        <arg>-XcompilerMetrics</arg>
-                    </compilerArgs>
-                    <launcherDir>${webappDirectory}</launcherDir>
-                    <warDir>${webappDirectory}</warDir>
-                    <classpathScope>compile+runtime</classpathScope>
-                    <startupUrls>
-                        <startupUrl>index.html</startupUrl>
-                    </startupUrls>
-                </configuration>
-            </plugin>
-
-            <!-- Copy webapp content to deploy folder -->
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${webappDirectory}</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/webapp</directory>
-                                    <filtering>false</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- Service worker generator -->
-            <plugin>
-                <groupId>com.github.eirslett</groupId>
-                <artifactId>frontend-maven-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>install node and npm</id>
-                        <goals>
-                            <goal>install-node-and-npm</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-                        <configuration>
-                            <installDirectory>pwa</installDirectory>
-                            <workingDirectory>pwa</workingDirectory>
-                            <nodeVersion>v9.0.0</nodeVersion>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>npm install</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-                        <configuration>
-                            <installDirectory>pwa</installDirectory>
-                            <workingDirectory>pwa</workingDirectory>
-                            <arguments>install</arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>npm generate</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <phase>prepare-package</phase>
-                        <configuration>
-                            <installDirectory>pwa</installDirectory>
-                            <workingDirectory>pwa</workingDirectory>
-                            <arguments>run-script generate ${appModuleShortName}</arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.google.gwt</groupId>
-                <artifactId>gwt</artifactId>
-                <version>${gwt.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <name>Sonatype Nexus snapshot repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Sonatype Nexus release repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
+        <!-- GwtMaterial -->
+        <dependency>
+            <groupId>com.github.gwtmaterialdesign</groupId>
+            <artifactId>gwt-material</artifactId>
+            <version>${gwt-material.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.gwtmaterialdesign</groupId>
+            <artifactId>gwt-material-themes</artifactId>
+            <version>${gwt-material.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.gwtmaterialdesign</groupId>
+            <artifactId>gwt-material-addins</artifactId>
+            <version>${gwt-material.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.gwtmaterialdesign</groupId>
+            <artifactId>gwt-material-table</artifactId>
+            <version>${gwt-material.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.gwtmaterialdesign</groupId>
+            <artifactId>gwt-material-amcharts</artifactId>
+            <version>${gwt-material.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
         <!-- GWT -->
         <dependency>
             <groupId>com.google.gwt</groupId>
@@ -193,69 +298,59 @@
         </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
+            <artifactId>gwt-codeserver</artifactId>
             <scope>provided</scope>
         </dependency>
 
-        <!-- JDT -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- GWTP -->
+        <!-- GWTP Components -->
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-mvp-client</artifactId>
             <version>${gwtp.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- GwtMaterial -->
         <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material</artifactId>
-            <version>${gwt-material.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-themes</artifactId>
-            <version>${gwt-material.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-addins</artifactId>
-            <version>${gwt-material.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-table</artifactId>
-            <version>${gwt-material.version}</version>
-        </dependency>
-
-        <!-- Am4charts -->
-        <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-amcharts</artifactId>
-            <version>${gwt-material.version}</version>
-        </dependency>
-
-        <!-- DI -->
-        <dependency>
-            <groupId>com.google.gwt.inject</groupId>
-            <artifactId>gin</artifactId>
-            <version>${gin.version}</version>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rpc-client</artifactId>
+            <version>${gwtp.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- JUnit -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rpc-server-guice</artifactId>
+            <version>${gwtp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rpc-shared</artifactId>
+            <version>${gwtp.version}</version>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>net.ltgt.gwt.maven</groupId>
+                        <artifactId>gwt-maven-plugin</artifactId>
+                        <version>${tbroyer.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <moduleName>gwt.material.design.demo.GwtMaterialDesignDemoDev</moduleName>
+                            <draftCompile combine.self="override">true</draftCompile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
