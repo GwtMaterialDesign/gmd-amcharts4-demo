@@ -28,7 +28,7 @@
             <m:MaterialNavBar ui:field="navBar" activates="sidenav" backgroundColor="WHITE">
                 <m:MaterialPanel containerEnabled="true">
                     <m:MaterialNavBrand fontSize="1.2em" textColor="BLACK">
-                        <m:MaterialImage url="/launcher-icons/launcher1x.png" alt="logo" float="LEFT" width="60px"/>
+                        <m:MaterialImage url="https://gwtmaterialdesign.github.io/gmd-am4charts-demo/launcher-icons/launcher1x.png" alt="logo" float="LEFT" width="60px"/>
                         <m:MaterialPanel>
                             <m:MaterialLabel text="gwt-material-amcharts" textColor="BLACK" fontWeight="BOLD" lineHeight="24" marginTop="12"/>
                             <m:MaterialLabel text="Version 4" lineHeight="12" fontSize="0.6em"/>
