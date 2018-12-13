@@ -32,6 +32,6 @@ public class UsaAlersLow extends Geodata {
 
     @Override
     protected TextResource getJsResource() {
-        return AppResources.INSTANCE.usaAlbersLow();
+        return AppResources.INSTANCE.usaAlbersLowJs();
     }
 }

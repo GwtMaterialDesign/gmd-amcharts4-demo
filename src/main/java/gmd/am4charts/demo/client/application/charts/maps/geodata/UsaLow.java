@@ -32,6 +32,6 @@ public class UsaLow extends Geodata {
 
     @Override
     protected TextResource getJsResource() {
-        return AppResources.INSTANCE.usaLow();
+        return AppResources.INSTANCE.usaLowJs();
     }
 }

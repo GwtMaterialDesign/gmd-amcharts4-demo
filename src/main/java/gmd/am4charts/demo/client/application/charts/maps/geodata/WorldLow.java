@@ -27,7 +27,7 @@ public class WorldLow extends Geodata {
 
     @Override
     protected TextResource getJsResource() {
-        return AppResources.INSTANCE.worldLow();
+        return AppResources.INSTANCE.worldLowJs();
     }
 
     @Override

@@ -32,11 +32,11 @@ public interface AppResources extends ClientBundle {
     TextResource appCss();
 
     @Source("js/worldLow.js")
-    TextResource worldLow();
+    TextResource worldLowJs();
 
     @Source("js/usaLow.js")
-    TextResource usaLow();
+    TextResource usaLowJs();
 
     @Source("js/usaAlbersLow.js")
-    TextResource usaAlbersLow();
+    TextResource usaAlbersLowJs();
 }
