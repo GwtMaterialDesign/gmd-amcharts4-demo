@@ -25,19 +25,23 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.presenter.slots.NestedSlot;
+import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 import gmd.am4charts.demo.client.application.events.ApplyThemeEvent;
 import gmd.am4charts.demo.client.application.navigation.HeaderLink;
 import gmd.am4charts.demo.client.application.service.NavigationService;
+import gwt.material.design.client.ui.MaterialToast;
 
 import java.util.List;
 
 public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
 
-
     interface MyView extends View {
         void renderHeaderLinks(List<HeaderLink> link);
+        void setActiveNavLink(int index);
     }
+
+    private PlaceManager placeManager;
 
     public static final NestedSlot SLOT_MAIN = new NestedSlot();
 
@@ -48,8 +52,11 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     @Inject
     ApplicationPresenter(EventBus eventBus,
                          MyView view,
-                         MyProxy proxy) {
+                         MyProxy proxy,
+                         PlaceManager placeManager) {
         super(eventBus, view, proxy, RevealType.Root);
+
+        this.placeManager = placeManager;
     }
 
     public void applyTheme() {
@@ -61,5 +68,18 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         super.onBind();
 
         getView().renderHeaderLinks(NavigationService.getHeaderLinks());
+    }
+
+    @Override
+    protected void onReveal() {
+        super.onReveal();
+
+        int index = 0;
+        for (HeaderLink headerLink : NavigationService.getHeaderLinks()) {
+            if (placeManager.getCurrentPlaceRequest().getNameToken().equals(headerLink.getHref())) {
+                getView().setActiveNavLink(index);
+            }
+            index++;
+        }
     }
 }

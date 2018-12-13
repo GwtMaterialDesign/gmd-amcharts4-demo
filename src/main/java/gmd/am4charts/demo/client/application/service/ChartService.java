@@ -2,6 +2,7 @@ package gmd.am4charts.demo.client.application.service;
 
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
 import gmd.am4charts.demo.client.application.charts.basic.*;
+import gmd.am4charts.demo.client.application.charts.gauges.AnimatedGaugeDemo;
 import gmd.am4charts.demo.client.application.charts.gauges.ClockDemo;
 import gmd.am4charts.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
 import gmd.am4charts.demo.client.application.charts.maps.*;
@@ -27,6 +28,7 @@ public class ChartService {
     private static void generateGauges() {
         gauges.add(new ClockDemo());
         gauges.add(new ClockWithTwoFacesDemo());
+        gauges.add(new AnimatedGaugeDemo());
     }
 
     private static void generateMaps() {
