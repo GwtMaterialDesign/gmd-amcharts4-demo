@@ -78,7 +78,7 @@ public class HeatLegendDemo implements ChartDemo {
         //Adding interactivity
         series.columns.template.events.on("over", param1 -> {
             Column column = param1.target;
-            if (column.dataItem.value != null) {
+            if (column.dataItem.value != 0) {
                 heatLegend.valueAxis.showTooltipAt(column.dataItem.value);
             } else {
                 heatLegend.valueAxis.hideTooltip();

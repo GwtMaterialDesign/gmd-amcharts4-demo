@@ -107,7 +107,7 @@ public class HeatmapWithLegendDemo implements ChartDemo {
     }
 
     private void handleHover(Column column, HeatLegend heatLegend) {
-        if (column.dataItem.value != null) {
+        if (column.dataItem.value != 0) {
             heatLegend.valueAxis.showTooltipAt(column.dataItem.value);
         }
         else {
