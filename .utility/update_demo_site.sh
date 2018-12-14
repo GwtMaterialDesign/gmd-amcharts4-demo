@@ -9,7 +9,7 @@ echo -e "GH_TOKEN is not set"
 exit 1
 fi
 
-if [ ! -f $TRAVIS_BUILD_DIR/target/gmd-am4charts-demo-*.war ]; then
+if [ ! -f $TRAVIS_BUILD_DIR/target/GmdAm4ChartsDemo-*.war ]; then
 echo -e "pattern war file not found."
 exit 1
 fi
@@ -40,7 +40,7 @@ git rm -rf ./WEB-INF
 fi
 
 # copy the new GWTMaterialPattern the snapshot dir.
-unzip -u $TRAVIS_BUILD_DIR/target/gmd-am4charts-demo-*.war -d ./
+unzip -u $TRAVIS_BUILD_DIR/target/GmdAm4ChartsDemo-*.war -d ./
 rm -rf ./META-INF
 rm -rf ./WEB-INF
 
