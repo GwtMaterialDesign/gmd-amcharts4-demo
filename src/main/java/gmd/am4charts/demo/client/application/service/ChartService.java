@@ -25,8 +25,8 @@ import gmd.am4charts.demo.client.application.charts.gauges.AnimatedGaugeDemo;
 import gmd.am4charts.demo.client.application.charts.gauges.ClockDemo;
 import gmd.am4charts.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
 import gmd.am4charts.demo.client.application.charts.maps.*;
-import gmd.am4charts.demo.client.application.charts.misc.JavascriptObjectChartDemo;
-import gmd.am4charts.demo.client.application.charts.misc.JsonObjectChartDemo;
+import gmd.am4charts.demo.client.application.charts.misc.PlainJsDataChartDemo;
+import gmd.am4charts.demo.client.application.charts.misc.InternalChartDataDemo;
 import gmd.am4charts.demo.client.application.charts.misc.PropertyFieldsChartDemo;
 import gmd.am4charts.demo.client.application.charts.types.*;
 
@@ -48,8 +48,8 @@ public class ChartService {
     }
 
     private static void generateDataChart() {
-        data.add(new JavascriptObjectChartDemo());
-        data.add(new JsonObjectChartDemo());
+        data.add(new InternalChartDataDemo());
+        data.add(new PlainJsDataChartDemo());
         data.add(new PropertyFieldsChartDemo());
     }
 

@@ -1,13 +1,13 @@
 package gmd.am4charts.demo.client.application.charts.misc.data;
 
-public class JsonObjectData {
+public class SampleData {
 
 
     private String category;
     private int value;
     private String color;
 
-    public JsonObjectData(String category, int value, String color) {
+    public SampleData(String category, int value, String color) {
         this.category = category;
         this.value = value;
         this.color = color;

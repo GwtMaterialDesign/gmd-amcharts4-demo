@@ -13,7 +13,7 @@ import gwt.material.design.amcharts.client.axis.ValueAxis;
 import gwt.material.design.amcharts.client.series.ColumnSeries;
 import gwt.material.design.amcore.client.Am4Core;
 
-public class JavascriptObjectChartDemo implements ChartDemo {
+public class PlainJsDataChartDemo implements ChartDemo {
 
     private XYChart chart;
 
@@ -52,13 +52,13 @@ public class JavascriptObjectChartDemo implements ChartDemo {
         JsObjectData data2 = JavaScriptObject.createObject().cast();
         data2.setCategory("Category 2");
         data2.setValue(500);
-        data2.setColor("red");
+        data2.setColor("yellow");
         data.push(data2);
 
         JsObjectData data3 = JavaScriptObject.createObject().cast();
         data3.setCategory("Category 3");
         data3.setValue(700);
-        data3.setColor("red");
+        data3.setColor("blue");
         data.push(data3);
 
         return data;
