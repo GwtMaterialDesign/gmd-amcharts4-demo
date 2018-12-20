@@ -9,9 +9,9 @@ package gmd.am4charts.demo.client.application.widget;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,6 +28,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.ui.*;
 
 public class DashboardCard extends Composite {
@@ -37,7 +38,11 @@ public class DashboardCard extends Composite {
     interface DashboardCardUiBinder extends UiBinder<Widget, DashboardCard> {
     }
 
-    static String githubUrl = "https://github.com/GwtMaterialDesign/gmd-am4charts-demo/tree/master/src/main/java/";
+    private static final String githubUrl = "https://github.com/GwtMaterialDesign/gmd-am4charts-demo/tree/master/src/main/java/";
+    private static final String NO_IMAGE = "no-image";
+
+    @UiField
+    MaterialCardImage cardImage;
 
     @UiField
     MaterialCard card;
@@ -67,9 +72,7 @@ public class DashboardCard extends Composite {
     protected void onAttach() {
         super.onAttach();
 
-        card.addClickHandler(event -> {
-            Window.open(GWT.getHostPageBaseURL() + "#viewer;type=" + type + ";id=" + index, "_self", "_self");
-        });
+        card.addClickHandler(event -> Window.open(GWT.getHostPageBaseURL() + "#viewer;type=" + type + ";id=" + index, "_self", "_self"));
 
         title.setText(generateTitle(demo));
         source.setTarget("_blank");
@@ -77,6 +80,9 @@ public class DashboardCard extends Composite {
 
         if (demo.getImage() != null) {
             image.setUrl(demo.getImage());
+        } else {
+            cardImage.addStyleName(NO_IMAGE);
+            image.setUrl("https://gwtmaterialdesign.github.io/gmd-am4charts-demo/launcher-icons/launcher4x.png");
         }
     }
 

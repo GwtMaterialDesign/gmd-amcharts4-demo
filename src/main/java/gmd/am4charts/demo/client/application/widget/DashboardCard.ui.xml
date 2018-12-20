@@ -23,7 +23,7 @@
 
 	<m:MaterialColumn grid="s12 m4 l3">
 		<m:MaterialCard ui:field="card" addStyleNames="chart-card"  hoverable="true">
-			<m:MaterialCardImage padding="20" border="1px solid #e9e9e9" height="240px">
+			<m:MaterialCardImage ui:field="cardImage" padding="20" border="1px solid #e9e9e9" height="240px">
 				<m:MaterialImage ui:field="image" />
 			</m:MaterialCardImage>
 			<m:MaterialCardContent padding="20">

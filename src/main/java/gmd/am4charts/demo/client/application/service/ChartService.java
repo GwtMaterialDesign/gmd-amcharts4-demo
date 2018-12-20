@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,14 +20,15 @@
 package gmd.am4charts.demo.client.application.service;
 
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
-import gmd.am4charts.demo.client.application.charts.basic.*;
+import gmd.am4charts.demo.client.application.charts.basic.SlicedPyramidChart;
 import gmd.am4charts.demo.client.application.charts.gauges.AnimatedGaugeDemo;
 import gmd.am4charts.demo.client.application.charts.gauges.ClockDemo;
 import gmd.am4charts.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
 import gmd.am4charts.demo.client.application.charts.maps.*;
+import gmd.am4charts.demo.client.application.charts.misc.JavascriptObjectChartDemo;
+import gmd.am4charts.demo.client.application.charts.misc.JsonObjectChartDemo;
+import gmd.am4charts.demo.client.application.charts.misc.PropertyFieldsChartDemo;
 import gmd.am4charts.demo.client.application.charts.types.*;
-import gmd.am4charts.demo.client.application.charts.types.ChordDiagramDemo;
-import gwt.material.design.amcharts.client.Chart;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +38,19 @@ public class ChartService {
     static List<ChartDemo> charts = new ArrayList<>();
     static List<ChartDemo> maps = new ArrayList<>();
     static List<ChartDemo> gauges = new ArrayList<>();
+    static List<ChartDemo> data = new ArrayList<>();
 
     static {
         generateCharts();
         generateMaps();
         generateGauges();
+        generateDataChart();
+    }
+
+    private static void generateDataChart() {
+        data.add(new JavascriptObjectChartDemo());
+        data.add(new JsonObjectChartDemo());
+        data.add(new PropertyFieldsChartDemo());
     }
 
     private static void generateGauges() {
@@ -117,6 +126,11 @@ public class ChartService {
         return gauges;
     }
 
+
+    public static List<ChartDemo> getDataChart() {
+        return data;
+    }
+
     public static ChartDemo getChart(int index) {
         return getCharts().get(index);
     }
@@ -127,6 +141,10 @@ public class ChartService {
 
     public static ChartDemo getGauge(int index) {
         return getGauges().get(index);
+    }
+
+    public static ChartDemo getDataChart(int index) {
+        return getDataChart().get(index);
     }
 
 }

@@ -17,14 +17,14 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.place;
+package gmd.am4charts.demo.client.application.page.misc;
 
-public class NameTokens {
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-    public static final String BASIC = "/";
-    public static final String TYPES = "types";
-    public static final String MAPS = "maps";
-    public static final String DATA = "data";
-    public static final String GAUGES = "gauges";
-    public static final String VIEWER = "viewer";
+public class MiscModule extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+        bindPresenter(MiscPresenter.class, MiscPresenter.MyView.class, MiscView.class,
+                MiscPresenter.MyProxy.class);
+    }
 }

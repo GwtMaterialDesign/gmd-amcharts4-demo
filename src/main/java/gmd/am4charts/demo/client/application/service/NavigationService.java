@@ -32,6 +32,7 @@ public class NavigationService {
         headerLinks.add(new HeaderLink("All Types", NameTokens.TYPES));
         headerLinks.add(new HeaderLink("Maps", NameTokens.MAPS));
         headerLinks.add(new HeaderLink("Gauge", NameTokens.GAUGES));
+        headerLinks.add(new HeaderLink("Data", NameTokens.DATA));
         return headerLinks;
     }
 }

@@ -23,6 +23,7 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import gmd.am4charts.demo.client.application.page.charttypes.ChartTypesModule;
 import gmd.am4charts.demo.client.application.page.gauge.GaugeModule;
 import gmd.am4charts.demo.client.application.page.maps.MapsModule;
+import gmd.am4charts.demo.client.application.page.misc.MiscModule;
 import gmd.am4charts.demo.client.application.page.viewer.ChartViewerModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
@@ -32,6 +33,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new ChartTypesModule());
         install(new MapsModule());
         install(new GaugeModule());
+        install(new MiscModule());
         install(new ChartViewerModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,

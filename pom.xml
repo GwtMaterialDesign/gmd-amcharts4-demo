@@ -238,8 +238,8 @@
         <!-- Am4charts -->
         <dependency>
             <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-am4charts</artifactId>
-            <version>1.0</version>
+            <artifactId>gwt-material-amcharts</artifactId>
+            <version>1.0-rc1</version>
         </dependency>
 
         <!-- DI -->

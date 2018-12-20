@@ -1,8 +1,6 @@
-var cacheName = 'cache_1544747612183';
+var cacheName = 'cache_1545304732430';
 
 var filesToCache = [  
-'GmdAm4ChartsDemo/39CC5ED4B9DDE93D6478830551D27A4B.cache.js',
-
 'GmdAm4ChartsDemo/clear.cache.gif',
 
 'GmdAm4ChartsDemo/css/animation.css',
@@ -24,6 +22,8 @@ var filesToCache = [
 'GmdAm4ChartsDemo/css/materialize.css',
 
 'GmdAm4ChartsDemo/css/materialize.min.css',
+
+'GmdAm4ChartsDemo/D31710924740BADCB56BAD71DE32F9FC.cache.js',
 
 'GmdAm4ChartsDemo/font/material-icons/MaterialIcons-Regular.eot',
 

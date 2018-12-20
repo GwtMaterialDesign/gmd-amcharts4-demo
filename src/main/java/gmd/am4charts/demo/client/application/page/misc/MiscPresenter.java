@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.am4charts.demo.client.application.page.viewer;
+package gmd.am4charts.demo.client.application.page.misc;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -25,61 +25,51 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
-import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import gmd.am4charts.demo.client.application.ApplicationPresenter;
 import gmd.am4charts.demo.client.application.charts.ChartDemo;
+import gmd.am4charts.demo.client.application.events.ApplyThemeEvent;
 import gmd.am4charts.demo.client.application.service.ChartService;
 import gmd.am4charts.demo.client.place.NameTokens;
-import gwt.material.design.client.ui.MaterialToast;
 
-public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView, ChartViewerPresenter.MyProxy> {
+import java.util.List;
+
+public class MiscPresenter extends Presenter<MiscPresenter.MyView, MiscPresenter.MyProxy>
+        implements ApplyThemeEvent.ApplyThemeHandler {
 
     interface MyView extends View {
-        void renderChart(ChartDemo demo);
+        void build(List<ChartDemo> demos);
     }
 
-    PlaceManager placeManager;
-
     @ProxyStandard
-    @NameToken(NameTokens.VIEWER)
-    interface MyProxy extends ProxyPlace<ChartViewerPresenter> {
+    @NameToken(NameTokens.DATA)
+    interface MyProxy extends ProxyPlace<MiscPresenter> {
     }
 
     @Inject
-    ChartViewerPresenter(
+    MiscPresenter(
             EventBus eventBus,
             MyView view,
-            MyProxy proxy, PlaceManager placeManager) {
+            MyProxy proxy) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
+    }
 
-        this.placeManager = placeManager;
+    @Override
+    protected void onBind() {
+        super.onBind();
+
+        addRegisteredHandler(ApplyThemeEvent.TYPE, this);
     }
 
     @Override
     protected void onReveal() {
         super.onReveal();
-        String type = placeManager.getCurrentPlaceRequest().getParameter("type", NameTokens.TYPES);
-        int id = Integer.parseInt(placeManager.getCurrentPlaceRequest().getParameter("id", "0"));
 
-        if (id > -1) {
-            ChartDemo demo = null;
+        getView().build(ChartService.getDataChart());
+    }
 
-            if (type.equals(NameTokens.TYPES)) {
-                demo = ChartService.getChart(id);
-            } else if (type.equals(NameTokens.MAPS)) {
-                demo = ChartService.getMap(id);
-            } else if (type.equals(NameTokens.GAUGES)) {
-                demo = ChartService.getGauge(id);
-            } else if (type.equals(NameTokens.DATA)) {
-                demo = ChartService.getDataChart(id);
-            }
-
-            if (demo != null) {
-                getView().renderChart(demo);
-            }
-        } else {
-            MaterialToast.fireToast("Demo not Found");
-        }
+    @Override
+    public void onApplyThemeEvent(ApplyThemeEvent event) {
+        getView().build(ChartService.getCharts());
     }
 }
