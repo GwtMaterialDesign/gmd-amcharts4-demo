@@ -102,15 +102,15 @@ public class SparklineDemo implements ChartDemo {
         series.stroke = color;
 
         // render data points as bullets
-        CircleBullet bullet = (CircleBullet) series.bullets.push(new CircleBullet());
+        /*CircleBullet bullet = (CircleBullet) series.bullets.push(new CircleBullet());
         bullet.circle.opacity = 0;
-        bullet.circle.fill = color;
+        bullet.circle.fill = color;*/
 
         MyCustomPropertyField propertyFields = new MyCustomPropertyField();
         propertyFields.opacity = "opacity";
-        bullet.circle.propertyFields = propertyFields;
+        /*bullet.circle.propertyFields = propertyFields;
 
-        bullet.circle.radius = 3;
+        bullet.circle.radius = 3;*/
 
         return chart;
     }
