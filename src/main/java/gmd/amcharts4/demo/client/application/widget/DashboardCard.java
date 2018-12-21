@@ -37,7 +37,7 @@ public class DashboardCard extends Composite {
     interface DashboardCardUiBinder extends UiBinder<Widget, DashboardCard> {
     }
 
-    private static final String githubUrl = "https://github.com/GwtMaterialDesign/gmd-am4charts-demo/tree/master/src/main/java/";
+    private static final String githubUrl = "https://github.com/GwtMaterialDesign/gmd-amcharts4-demo/tree/master/src/main/java/";
     private static final String NO_IMAGE = "no-image";
 
     @UiField
@@ -81,7 +81,7 @@ public class DashboardCard extends Composite {
             image.setUrl(demo.getImage());
         } else {
             cardImage.addStyleName(NO_IMAGE);
-            image.setUrl("https://gwtmaterialdesign.github.io/gmd-am4charts-demo/launcher-icons/launcher4x.png");
+            image.setUrl("https://gwtmaterialdesign.github.io/gmd-amcharts4-demo/launcher-icons/launcher4x.png");
         }
     }
 
