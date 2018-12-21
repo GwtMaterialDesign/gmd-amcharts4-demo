@@ -9,7 +9,7 @@ echo -e "GH_TOKEN is not set"
 exit 1
 fi
 
-if [ ! -f $TRAVIS_BUILD_DIR/target/GmdAm4ChartsDemo-*.war ]; then
+if [ ! -f $TRAVIS_BUILD_DIR/target/GmdAmCharts4Demo-*.war ]; then
 echo -e "pattern war file not found."
 exit 1
 fi
@@ -22,12 +22,12 @@ git config --global user.name "travis-ci"
 # clone the gh-pages branch.
 cd $HOME
 rm -rf gh-pages
-git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesign/gmd-am4charts-demo gh-pages > /dev/null
+git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesign/gmd-amcharts4-demo gh-pages > /dev/null
 cd gh-pages
 
 # remove the GwtMaterialDemo directories from git.
-if [[ -d ./GmdAm4ChartsDemo ]]; then
-git rm -rf ./GmdAm4ChartsDemo
+if [[ -d ./GmdAmCharts4Demo ]]; then
+git rm -rf ./GmdAmCharts4Demo
 fi
 if [[ -f ./index.html ]]; then
 git rm -rf ./index.html
@@ -40,7 +40,7 @@ git rm -rf ./WEB-INF
 fi
 
 # copy the new GWTMaterialPattern the snapshot dir.
-unzip -u $TRAVIS_BUILD_DIR/target/GmdAm4ChartsDemo*.war -d ./
+unzip -u $TRAVIS_BUILD_DIR/target/GmdAmCharts4Demo*.war -d ./
 rm -rf ./META-INF
 rm -rf ./WEB-INF
 
