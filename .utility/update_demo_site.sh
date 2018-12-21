@@ -9,7 +9,7 @@ echo -e "GH_TOKEN is not set"
 exit 1
 fi
 
-if [ ! -f $TRAVIS_BUILD_DIR/target/GmdAmCharts4Demo-*.war ]; then
+if [ ! -f $TRAVIS_BUILD_DIR/target/GmdAmCharts4Demo*.war ]; then
 echo -e "pattern war file not found."
 exit 1
 fi
