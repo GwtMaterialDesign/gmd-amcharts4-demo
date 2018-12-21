@@ -34,8 +34,8 @@ public class ClientModule extends AbstractPresenterModule {
         install(new ApplicationModule());
 
         // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.DATA);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.DATA);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.DATA);
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.TYPES);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.TYPES);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.TYPES);
     }
 }
