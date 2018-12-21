@@ -28,15 +28,16 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.amcharts4.demo.client.application.navigation.HeaderLink;
 import gmd.amcharts4.demo.client.resources.AppResources;
 import gwt.material.design.client.MaterialDesignBase;
+import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.base.helper.ColorHelper;
+import gwt.material.design.client.base.viewport.Resolution;
+import gwt.material.design.client.base.viewport.ViewPort;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.CssName;
+import gwt.material.design.client.js.Window;
 import gwt.material.design.client.pwa.PwaManager;
 import gwt.material.design.client.pwa.push.js.Notification;
-import gwt.material.design.client.ui.MaterialLink;
-import gwt.material.design.client.ui.MaterialNavSection;
-import gwt.material.design.client.ui.MaterialPanel;
-import gwt.material.design.client.ui.MaterialToast;
+import gwt.material.design.client.ui.*;
 
 import java.util.List;
 
@@ -47,6 +48,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @UiField
     MaterialNavSection navSection;
+
+    @UiField
+    MaterialSideNavDrawer sideNav;
 
     @UiField
     MaterialPanel chartContent;
@@ -86,22 +90,34 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @Override
     public void setActiveNavLink(int index) {
-        for (Widget child : navSection) {
-            child.removeStyleName(CssName.ACTIVE);
-        }
-        if (index > -1) {
-            Widget widget = navSection.getWidget(index);
-            widget.addStyleName(CssName.ACTIVE);
+        if (Window.matchMedia(Resolution.ALL_LAPTOP.asMediaQuery())) {
+            for (Widget child : navSection) {
+                child.removeStyleName(CssName.ACTIVE);
+            }
+            if (index > -1) {
+                Widget widget = navSection.getWidget(index);
+                widget.addStyleName(CssName.ACTIVE);
+            }
         }
     }
 
     @Override
     public void renderHeaderLinks(List<HeaderLink> links) {
+        ViewPort.when(Resolution.ALL_LAPTOP).then(viewPortChange -> {
+            renderHeaderLinks(links, navSection);
+        }, viewPortRect -> {
+            renderHeaderLinks(links, sideNav);
+            return true;
+        });
+    }
+
+    protected void renderHeaderLinks(List<HeaderLink> links, MaterialWidget container) {
+        container.clear();
         links.forEach(headerLink -> {
             MaterialLink link = new MaterialLink(headerLink.getName());
             link.setHref("#" + headerLink.getHref());
             link.setTextColor(Color.BLACK);
-            navSection.add(link);
+            container.add(link);
         });
     }
 }

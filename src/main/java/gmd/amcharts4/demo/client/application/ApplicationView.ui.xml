@@ -25,7 +25,7 @@
 
     <m:MaterialPanel>
         <m:MaterialHeader layoutPosition="FIXED" width="100%" top="0" depth="999">
-            <m:MaterialNavBar ui:field="navBar" activates="sidenav" backgroundColor="WHITE">
+            <m:MaterialNavBar  ui:field="navBar" activates="sidenav" backgroundColor="WHITE">
                 <m:MaterialPanel containerEnabled="true">
                     <m:MaterialNavBrand fontSize="1.2em" textColor="BLACK">
                         <m:MaterialImage url="https://gwtmaterialdesign.github.io/gmd-amcharts4-demo/launcher-icons/launcher1x.png" alt="logo" float="LEFT" width="60px"/>
@@ -37,7 +37,11 @@
                     <m:MaterialNavSection ui:field="navSection" float="RIGHT" />
                 </m:MaterialPanel>
             </m:MaterialNavBar>
+
+
         </m:MaterialHeader>
+
+        <m:MaterialSideNavDrawer m:id="sidenav" ui:field="sideNav" hideOn="HIDE_ON_LARGE" closeOnClick="true"/>
 
         <m:MaterialContainer paddingTop="64" addStyleNames="container">
             <m:MaterialRow padding="20">
