@@ -25,9 +25,7 @@ import gmd.amcharts4.demo.client.application.charts.gauges.AnimatedGaugeDemo;
 import gmd.amcharts4.demo.client.application.charts.gauges.ClockDemo;
 import gmd.amcharts4.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
 import gmd.amcharts4.demo.client.application.charts.maps.*;
-import gmd.amcharts4.demo.client.application.charts.misc.PlainJsDataChartDemo;
-import gmd.amcharts4.demo.client.application.charts.misc.InternalChartDataDemo;
-import gmd.amcharts4.demo.client.application.charts.misc.PropertyFieldsChartDemo;
+import gmd.amcharts4.demo.client.application.charts.misc.*;
 import gmd.amcharts4.demo.client.application.charts.types.*;
 
 import java.util.ArrayList;
@@ -51,6 +49,8 @@ public class ChartService {
         data.add(new InternalChartDataDemo());
         data.add(new PlainJsDataChartDemo());
         data.add(new PropertyFieldsChartDemo());
+        data.add(new ConfigFieldDataDemo());
+        data.add(new ExternalDataDemo());
     }
 
     private static void generateGauges() {
