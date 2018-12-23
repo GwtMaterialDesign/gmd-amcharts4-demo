@@ -20,6 +20,8 @@
 package gmd.amcharts4.demo.client.application.service;
 
 import gmd.amcharts4.demo.client.application.charts.ChartDemo;
+import gmd.amcharts4.demo.client.application.charts.basic.BulletChartDemo;
+import gmd.amcharts4.demo.client.application.charts.basic.RangeAreaChartDemo;
 import gmd.amcharts4.demo.client.application.charts.basic.SlicedPyramidChart;
 import gmd.amcharts4.demo.client.application.charts.gauges.AnimatedGaugeDemo;
 import gmd.amcharts4.demo.client.application.charts.gauges.ClockDemo;
@@ -107,10 +109,9 @@ public class ChartService {
         charts.add(new ScatterChartDemo());
         charts.add(new StepLineChartDemo());
         charts.add(new GanttChartDemo());
-
+        charts.add(new BulletChartDemo());
+        charts.add(new RangeAreaChartDemo());
         //TODO: Map with bubbles
-        //TODO: Bullet Chart
-        //TODO: RangeAreaChart
         //TODO: Population Pyramid
     }
 

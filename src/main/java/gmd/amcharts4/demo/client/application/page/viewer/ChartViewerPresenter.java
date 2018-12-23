@@ -59,6 +59,7 @@ public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView,
     @Override
     protected void onReveal() {
         super.onReveal();
+
         String type = placeManager.getCurrentPlaceRequest().getParameter("type", NameTokens.TYPES);
         int id = Integer.parseInt(placeManager.getCurrentPlaceRequest().getParameter("id", "0"));
 
