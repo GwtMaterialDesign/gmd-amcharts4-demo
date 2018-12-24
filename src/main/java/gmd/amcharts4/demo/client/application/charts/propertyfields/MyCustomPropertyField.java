@@ -52,4 +52,7 @@ public class MyCustomPropertyField {
 
     @JsProperty
     public String latitude;
+
+    @JsProperty
+    public String radius;
 }

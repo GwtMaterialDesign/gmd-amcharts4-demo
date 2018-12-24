@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -101,16 +101,15 @@ public class SparklineDemo implements ChartDemo {
         series.strokeWidth = 2;
         series.stroke = color;
 
-        // render data points as bullets
-        /*CircleBullet bullet = (CircleBullet) series.bullets.push(new CircleBullet());
+        CircleBullet bullet = (CircleBullet) series.bullets.push(new CircleBullet());
         bullet.circle.opacity = 0;
-        bullet.circle.fill = color;*/
+        bullet.circle.fill = color;
 
         MyCustomPropertyField propertyFields = new MyCustomPropertyField();
         propertyFields.opacity = "opacity";
-        /*bullet.circle.propertyFields = propertyFields;
+        bullet.circle.propertyFields = propertyFields;
 
-        bullet.circle.radius = 3;*/
+        bullet.circle.radius = 3;
 
         return chart;
     }

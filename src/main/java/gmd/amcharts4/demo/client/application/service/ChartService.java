@@ -53,6 +53,7 @@ public class ChartService {
         data.add(new PropertyFieldsChartDemo());
         data.add(new ConfigFieldDataDemo());
         data.add(new ExternalDataDemo());
+        data.add(new ExternalCSVDemo());
     }
 
     private static void generateGauges() {
@@ -78,7 +79,6 @@ public class ChartService {
     }
 
     private static void generateCharts() {
-        charts.add(new StackedAreaDemo());
         charts.add(new SimplePieChartDemo());
         charts.add(new BubbleChartDemo());
         charts.add(new ChordDiagramNonRibbonDemo());
@@ -97,6 +97,7 @@ public class ChartService {
         charts.add(new FunnelChartDemo());
         charts.add(new AngularGaugeDemo());
         charts.add(new SlicedPyramidChart());
+        charts.add(new StackedAreaDemo());
         charts.add(new HeatmapWithLegendDemo());
         charts.add(new RadialBarChartDemo());
         charts.add(new StackedBarDemo());
@@ -111,8 +112,10 @@ public class ChartService {
         charts.add(new GanttChartDemo());
         charts.add(new BulletChartDemo());
         charts.add(new RangeAreaChartDemo());
-        //TODO: Map with bubbles
-        //TODO: Population Pyramid
+        charts.add(new PieChartAsBulletsDemo());
+        charts.add(new ColumnChartWithImagesDemo());
+        charts.add(new RiskHeatmapDemo());
+        charts.add(new ChartWithGapsDemo());
     }
 
     public static List<ChartDemo> getCharts() {

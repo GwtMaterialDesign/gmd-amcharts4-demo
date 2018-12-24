@@ -55,7 +55,6 @@ public class RadialHistogramDemo implements ChartDemo {
         categoryAxis.tooltip.disabled = true;
         categoryAxis.renderer.minHeight = 110;
         categoryAxis.renderer.grid.template.disabled = true;
-        categoryAxis.renderer.labels.template.disabled = true;
         AxisLabelCircular labelTemplate = (AxisLabelCircular) categoryAxis.renderer.labels.template;
         labelTemplate.radius = new Percent(-60);
         labelTemplate.location = 0.5;

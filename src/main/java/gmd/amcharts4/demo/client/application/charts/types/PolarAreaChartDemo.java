@@ -40,7 +40,7 @@ public class PolarAreaChartDemo implements ChartDemo {
     @Override
     public void generate(Widget widget) {
         chart = (RadarChart) Am4Core.create(widget, Am4Charts.RadarChart);
-        chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+        //chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
         chart.dataSource.url = "data/polar-chart.json";
         chart.radius = new Percent(100);

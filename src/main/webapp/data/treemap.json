@@ -1,20 +1,21 @@
-[{
-  "name": "First",
-  "children": [
-    {
-      "name": "A1",
-      "value": 100
-    },
-    {
-      "name": "A2",
-      "value": 60
-    },
-    {
-      "name": "A3",
-      "value": 30
-    }
-  ]
-},
+[
+  {
+    "name": "First",
+    "children": [
+      {
+        "name": "A1",
+        "value": 100
+      },
+      {
+        "name": "A2",
+        "value": 60
+      },
+      {
+        "name": "A3",
+        "value": 30
+      }
+    ]
+  },
   {
     "name": "Second",
     "children": [
@@ -90,4 +91,5 @@
         "value": 148
       }
     ]
-  }]
+  }
+]
