@@ -27,11 +27,14 @@ import gwt.material.design.amcharts.client.RadarChart;
 import gwt.material.design.amcharts.client.axis.AxisLabelCircular;
 import gwt.material.design.amcharts.client.axis.CategoryAxis;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
+import gwt.material.design.amcharts.client.column.Column;
 import gwt.material.design.amcharts.client.cursor.RadarCursor;
 import gwt.material.design.amcharts.client.scrollbar.XYChartScrollbar;
 import gwt.material.design.amcharts.client.series.RadarColumnSeries;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.Percent;
+import gwt.material.design.amcore.client.color.Color;
 
 public class RadialHistogramDemo implements ChartDemo {
 
@@ -77,7 +80,9 @@ public class RadialHistogramDemo implements ChartDemo {
 
         series.tooltip.pointerOrientation = "vertical";
 
-        series.columns.template.adapter.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
+        Adapter<Color, Column> adapter = series.columns.template.adapter;
+        adapter.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
+
         // Cursor
         chart.cursor = new RadarCursor();
         chart.cursor.innerRadius = new Percent(50);

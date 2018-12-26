@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,11 +25,13 @@ import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.GaugeChart;
+import gwt.material.design.amcharts.client.axis.AxisLabelCircular;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
 import gwt.material.design.amcharts.client.dataitem.ValueAxisDataItem;
 import gwt.material.design.amcharts.client.renderer.AxisRendererCircular;
 import gwt.material.design.amcharts.client.tick.ClockHand;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.animation.Animation;
 import gwt.material.design.amcore.client.animation.AnimationOptions;
 import gwt.material.design.amcore.client.base.Percent;
@@ -62,10 +64,14 @@ public class AnimatedGaugeDemo implements ChartDemo {
         rendererCircular1.ticks.template.length = 10;
         rendererCircular1.grid.template.disabled = true;
         rendererCircular1.labels.template.radius = 40;
-        rendererCircular1.labels.template.adapter.add("text",  (label, labelAdapter) -> label + "%");
+
+        Adapter<AxisLabelCircular, AxisLabelCircular> adapter = rendererCircular1.labels.template.adapter;
+        adapter.add("text", (source, target) -> {
+            AxisLabelCircular label = source;
+            return label + "%";
+        });
 
         // Axis for ranges
-
         ColorSet colorSet = new ColorSet();
 
         ValueAxis axis2 = (ValueAxis) chart.xAxes.push(new ValueAxis());

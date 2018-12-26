@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,11 +24,15 @@ import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.RadarChart;
+import gwt.material.design.amcharts.client.axis.Axis;
+import gwt.material.design.amcharts.client.axis.AxisLabel;
 import gwt.material.design.amcharts.client.axis.CategoryAxis;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
+import gwt.material.design.amcharts.client.column.Column;
 import gwt.material.design.amcharts.client.cursor.RadarCursor;
 import gwt.material.design.amcharts.client.series.RadarColumnSeries;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.InterfaceColorSet;
 import gwt.material.design.amcore.client.base.Percent;
 
@@ -57,7 +61,10 @@ public class SolidGaugeDemo implements ChartDemo {
         categoryAxis.renderer.grid.template.strokeOpacity = 0;
         categoryAxis.renderer.labels.template.horizontalCenter = "right";
         categoryAxis.renderer.labels.template.fontWeight = "500";
-        categoryAxis.renderer.labels.template.adapter.add("fill", (fill, target) -> (target.dataItem.index >= 0) ? chart.colors.getIndex(target.dataItem.index) : fill);
+
+        Adapter<AxisLabel, AxisLabel> adapter = categoryAxis.renderer.labels.template.adapter;
+        adapter.add("fill", (fill, target) -> (target.dataItem.index >= 0) ? chart.colors.getIndex(target.dataItem.index) : fill);
+
         categoryAxis.renderer.minGridDistance = 10;
 
         ValueAxis valueAxis = (ValueAxis) chart.xAxes.push(new ValueAxis());
@@ -85,7 +92,9 @@ public class SolidGaugeDemo implements ChartDemo {
         series2.columns.template.tooltipText = "{category}: [bold]{value}[/]";
         series2.columns.template.radarColumn.cornerRadius = 20;
 
-        series2.columns.template.adapter.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
+        Adapter<Column, Column> adapter1 = series2.columns.template.adapter;
+        adapter1.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
+
         // Add cursor
         chart.cursor = new RadarCursor();
     }

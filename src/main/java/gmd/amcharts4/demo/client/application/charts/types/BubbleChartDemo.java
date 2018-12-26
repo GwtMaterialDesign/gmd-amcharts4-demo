@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,9 +32,11 @@ import gwt.material.design.amcharts.client.properties.CircleBulletProperties;
 import gwt.material.design.amcharts.client.scrollbar.XYChartScrollbar;
 import gwt.material.design.amcharts.client.series.LineSeries;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.color.Color;
 import gwt.material.design.amcore.client.properties.HeatRule;
 import gwt.material.design.amcore.client.state.SpriteState;
+import gwt.material.design.amcore.client.ui.Circle;
 
 public class BubbleChartDemo implements ChartDemo {
 
@@ -87,8 +89,8 @@ public class BubbleChartDemo implements ChartDemo {
         heatRule.property = "radius";
         series.heatRules.push(heatRule);
 
-
-        bullet.circle.adapter.add("tooltipY", (circle, adapter) -> new Float(-(Double) adapter.radius));
+        Adapter<Circle, Circle> adapter = bullet.circle.adapter;
+        adapter.add("tooltipY", (circle, target) -> new Float(-(Double) target.radius));
 
         chart.cursor = new XYCursor();
         chart.cursor.behavior = "zoomXY";

@@ -26,7 +26,9 @@ import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.dataitem.ValueAxisDataItem;
 import gwt.material.design.amcharts.client.legend.HeatLegend;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.Percent;
+import gwt.material.design.amcore.client.base.Sprite;
 import gwt.material.design.amcore.client.color.Color;
 import gwt.material.design.amcore.client.properties.HeatRule;
 import gwt.material.design.amcore.client.state.SpriteState;
@@ -86,7 +88,8 @@ public class UsHeatMap implements ChartDemo {
         maxRange.label.text = "A lot!";
 
         // Blank out internal heat legend value axis labels
-        heatLegend.valueAxis.renderer.labels.template.adapter.add("text", (sprite, spriteAdapter) -> "");
+        Adapter<Sprite, Sprite> adapter = heatLegend.valueAxis.renderer.labels.template.adapter;
+        adapter.add("text", (sprite, spriteAdapter) -> "");
 
         // Configure series tooltip
         MapPolygon polygonTemplate = polygonSeries.mapPolygons.template;

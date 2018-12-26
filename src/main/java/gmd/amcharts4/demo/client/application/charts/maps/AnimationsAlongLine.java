@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,6 +24,7 @@ import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gmd.amcharts4.demo.client.application.charts.maps.geodata.WorldLow;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.animation.Animation;
 import gwt.material.design.amcore.client.base.Sprite;
 import gwt.material.design.amcore.client.color.Color;
@@ -106,7 +107,8 @@ public class AnimationsAlongLine implements ChartDemo {
         plane.height = 48;
 
 
-        plane.adapter.add("scale", (object, target) -> 0.5 * (1 - (Math.abs(0.5 - target.position))));
+        Adapter<MapLineObject, MapLineObject> adapter = plane.adapter;
+        adapter.add("scale", (object, target) -> 0.5 * (1 - (Math.abs(0.5 - target.position))));
 
         Sprite planeImage = (Sprite) plane.createChild(Am4Core.Sprite);
         planeImage.scale = 0.08;
@@ -129,7 +131,8 @@ public class AnimationsAlongLine implements ChartDemo {
         shadowPlaneImage.fill = new Color("#000");
         shadowPlaneImage.strokeOpacity = 0;
 
-        shadowPlane.adapter.add("scale", (mapLineObject, target) -> {
+        Adapter<MapLineObject, MapLineObject> adapter1 = shadowPlane.adapter;
+        adapter1.add("scale", (mapLineObject, target) -> {
             target.opacity = (0.6 - (Math.abs(0.5 - target.position)));
             return 0.5 - 0.3 * (1 - (Math.abs(0.5 - target.position)));
         });

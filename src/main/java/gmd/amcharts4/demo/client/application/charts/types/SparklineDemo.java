@@ -35,8 +35,10 @@ import gwt.material.design.amcharts.client.series.LineSeries;
 import gwt.material.design.amcharts.client.series.PieSeries;
 import gwt.material.design.amcharts.client.tick.ClockHand;
 import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.Container;
 import gwt.material.design.amcore.client.base.Percent;
+import gwt.material.design.amcore.client.base.Slice;
 import gwt.material.design.amcore.client.color.Color;
 import gwt.material.design.amcore.client.color.ColorSet;
 
@@ -177,9 +179,12 @@ public class SparklineDemo implements ChartDemo {
         pieSeries.ticks.template.disabled = true;
         pieSeries.slices.template.fill = color;
 
-        pieSeries.slices.template.adapter.add("fill", (fill, target) -> {
-            return fill.lighten(0.1 * target.dataItem.index);
+        Adapter<Color, Slice> adapter =  pieSeries.slices.template.adapter;
+        adapter.add("fill", (fill, target) -> {
+            Color color1 = fill;
+            return color1.lighten(0.1 * target.dataItem.index);
         });
+
         pieSeries.slices.template.stroke = new Color("#fff");
 
         chart.chartContainer.minHeight = 40;
