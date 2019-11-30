@@ -21,6 +21,7 @@ package gmd.amcharts4.demo.client.application;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -30,12 +31,15 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import gmd.amcharts4.demo.client.application.events.ApplyThemeEvent;
 import gmd.amcharts4.demo.client.application.navigation.HeaderLink;
 import gmd.amcharts4.demo.client.application.service.NavigationService;
+import gwt.material.design.client.theme.dark.ColorScheme;
+import gwt.material.design.client.theme.dark.ColorSchemeChangeEvent;
 
 import java.util.List;
 
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
+public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+    implements ApplicationUiHandlers {
 
-    interface MyView extends View {
+    interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
         void renderHeaderLinks(List<HeaderLink> link);
         void setActiveNavLink(int index);
     }
@@ -56,6 +60,8 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         super(eventBus, view, proxy, RevealType.Root);
 
         this.placeManager = placeManager;
+
+        getView().setUiHandlers(this);
     }
 
     public void applyTheme() {
@@ -80,5 +86,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
             }
             index++;
         }
+    }
+
+    @Override
+    public void setColorScheme(ColorScheme colorScheme) {
+        ColorSchemeChangeEvent.fire(this, colorScheme);
     }
 }

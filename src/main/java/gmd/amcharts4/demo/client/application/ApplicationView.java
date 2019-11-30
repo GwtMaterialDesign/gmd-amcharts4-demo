@@ -20,13 +20,19 @@
 package gmd.amcharts4.demo.client.application;
 
 import com.google.gwt.dom.client.Document;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import gmd.amcharts4.demo.client.application.navigation.HeaderLink;
 import gmd.amcharts4.demo.client.resources.AppResources;
+import gwt.material.design.amcore.client.Am4Core;
+import gwt.material.design.amcore.client.theme.DarkTheme;
+import gwt.material.design.amcore.client.theme.MaterialTheme;
 import gwt.material.design.client.MaterialDesignBase;
 import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.base.helper.ColorHelper;
@@ -39,11 +45,14 @@ import gwt.material.design.client.pwa.PwaManager;
 import gwt.material.design.client.pwa.push.js.Notification;
 import gwt.material.design.client.pwa.serviceworker.ServiceWorkerManager;
 import gwt.material.design.client.pwa.serviceworker.js.ServiceWorkerOption;
+import gwt.material.design.client.theme.dark.ColorScheme;
+import gwt.material.design.client.theme.dark.ColorSchemeChangeEvent;
 import gwt.material.design.client.ui.*;
 
 import java.util.List;
 
-public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
+public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers>
+    implements ApplicationPresenter.MyView {
 
     interface Binder extends UiBinder<Widget, ApplicationView> {
     }
@@ -56,6 +65,9 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     @UiField
     MaterialPanel chartContent;
+
+    @UiField
+    MaterialDarkModeToggle darkToggle;
 
     @Inject
     ApplicationView(Binder uiBinder) {
@@ -94,6 +106,11 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
     }
 
+    @UiHandler("darkToggle")
+    void darkToggle(ColorSchemeChangeEvent e) {
+        getUiHandlers().setColorScheme(e.getColorScheme());
+    }
+
     @Override
     public void setActiveNavLink(int index) {
         if (Window.matchMedia(Resolution.ALL_LAPTOP.asMediaQuery())) {
@@ -122,7 +139,6 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
         links.forEach(headerLink -> {
             MaterialLink link = new MaterialLink(headerLink.getName());
             link.setHref("#" + headerLink.getHref());
-            link.setTextColor(Color.BLACK);
             container.add(link);
         });
     }

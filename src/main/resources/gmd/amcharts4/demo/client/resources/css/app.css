@@ -6,6 +6,10 @@ html, body {
     overflow-x: hidden;
 }
 
+nav .brand-logo {
+    color: rgba(0, 0, 0, 0.8);
+}
+
 /** Nav Collapse icon **/
 nav .button-collapse i {
     color: #8d8d8d;
@@ -121,6 +125,11 @@ nav ul li.active {
     padding: 24px;
 }
 
+nav ul a,
+nav i {
+    color: black;
+}
+
 @media screen and (max-width: 900px) {
     nav .button-collapse i {
         display: block;
@@ -137,4 +146,3 @@ nav ul li.active {
         height: 280px !important;
     }
 }
-

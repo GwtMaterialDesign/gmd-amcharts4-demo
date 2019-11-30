@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,11 +31,15 @@ import gmd.amcharts4.demo.client.application.ApplicationPresenter;
 import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gmd.amcharts4.demo.client.application.service.ChartService;
 import gmd.amcharts4.demo.client.place.NameTokens;
+import gwt.material.design.client.theme.dark.ColorScheme;
+import gwt.material.design.client.theme.dark.ColorSchemeChangeEvent;
 import gwt.material.design.client.ui.MaterialToast;
 
-public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView, ChartViewerPresenter.MyProxy> {
+public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView, ChartViewerPresenter.MyProxy>
+    implements ColorSchemeChangeEvent.ColorSchemeChangeHandler {
 
     interface MyView extends View {
+        void setColorScheme(ColorScheme colorScheme, boolean render);
         void renderChart(ChartDemo demo);
     }
 
@@ -48,12 +52,21 @@ public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView,
 
     @Inject
     ChartViewerPresenter(
-            EventBus eventBus,
-            MyView view,
-            MyProxy proxy, PlaceManager placeManager) {
+        EventBus eventBus,
+        MyView view,
+        MyProxy proxy, PlaceManager placeManager) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
 
         this.placeManager = placeManager;
+
+
+    }
+
+    @Override
+    protected void onBind() {
+        super.onBind();
+
+        addRegisteredHandler(ColorSchemeChangeEvent.TYPE, this);
     }
 
     @Override
@@ -82,5 +95,10 @@ public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView,
         } else {
             MaterialToast.fireToast("Demo not Found");
         }
+    }
+
+    @Override
+    public void onColorSchemeChange(ColorSchemeChangeEvent event) {
+        getView().setColorScheme(event.getColorScheme(), true);
     }
 }

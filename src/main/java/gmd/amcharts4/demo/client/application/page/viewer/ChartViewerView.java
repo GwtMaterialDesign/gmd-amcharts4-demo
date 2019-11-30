@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,10 +27,15 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gmd.amcharts4.demo.client.application.widget.DashboardCard;
 import gmd.amcharts4.demo.client.application.widget.chart.ThemeSelector;
+import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.theme.DarkTheme;
+import gwt.material.design.amcore.client.theme.MaterialTheme;
+import gwt.material.design.client.js.Window;
+import gwt.material.design.client.theme.dark.ColorScheme;
 import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialPanel;
+import gwt.material.design.client.ui.MaterialToast;
 
 import javax.inject.Inject;
 
@@ -71,11 +76,23 @@ public class ChartViewerView extends ViewImpl implements ChartViewerPresenter.My
             } else {
                 RootPanel.get().removeStyleName(DARK);
             }
-
-            if (demo != null) {
-                renderChart(demo);
-            }
+            renderChart(demo);
         });
+    }
+
+    @Override
+    public void setColorScheme(ColorScheme colorScheme, boolean render) {
+        Am4Core.unuseAllThemes();
+        if (colorScheme == ColorScheme.DARK) {
+            Am4Core.useTheme(new DarkTheme());
+            RootPanel.get().addStyleName(DARK);
+        } else {
+            Am4Core.useTheme(new MaterialTheme());
+            RootPanel.get().removeStyleName(DARK);
+        }
+        if (render && demo != null) {
+            renderChart(demo);
+        }
     }
 
     @Override
