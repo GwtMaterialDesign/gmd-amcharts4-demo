@@ -37,6 +37,8 @@ import gwt.material.design.client.constants.CssName;
 import gwt.material.design.client.js.Window;
 import gwt.material.design.client.pwa.PwaManager;
 import gwt.material.design.client.pwa.push.js.Notification;
+import gwt.material.design.client.pwa.serviceworker.ServiceWorkerManager;
+import gwt.material.design.client.pwa.serviceworker.js.ServiceWorkerOption;
 import gwt.material.design.client.ui.*;
 
 import java.util.List;
@@ -67,8 +69,12 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
 
         // Enable PWA
         if (PwaManager.isPwaSupported()) {
+            ServiceWorkerManager manager = new ServiceWorkerManager("/gmd-core-demo/service-worker.js");
+            ServiceWorkerOption option = ServiceWorkerOption.create();
+            option.setScope("/gmd-amcharts4-demo/");
+            manager.setOption(option);
             PwaManager.getInstance()
-                    .setServiceWorker("service-worker.js")
+                    .setServiceWorker(manager)
                     .setThemeColor(ColorHelper.setupComputedBackgroundColor(Color.BLUE_DARKEN_3))
                     .setWebManifest("manifest.url")
                     .load();
