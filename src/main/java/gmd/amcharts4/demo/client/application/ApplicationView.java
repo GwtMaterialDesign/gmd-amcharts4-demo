@@ -81,12 +81,8 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers>
 
         // Enable PWA
         if (PwaManager.isPwaSupported()) {
-            ServiceWorkerManager manager = new ServiceWorkerManager("/gmd-core-demo/service-worker.js");
-            ServiceWorkerOption option = ServiceWorkerOption.create();
-            option.setScope("/gmd-amcharts4-demo/");
-            manager.setOption(option);
             PwaManager.getInstance()
-                    .setServiceWorker(manager)
+                    .setServiceWorker(new AppServiceWorkerManager())
                     .setThemeColor(ColorHelper.setupComputedBackgroundColor(Color.BLUE_DARKEN_3))
                     .setWebManifest("manifest.url")
                     .load();
