@@ -1,7 +1,3 @@
-<img src="https://i.imgur.com/1q1K6BU.png" width="60%"/>
-Demo for AmCharts version 4.
-
-
 ### Running the demo
 #### Step 1
 - Clone the project and import it to your desired IDE (Eclipse / Intelij IDEA)
