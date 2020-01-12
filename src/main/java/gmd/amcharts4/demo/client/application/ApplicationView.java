@@ -30,6 +30,7 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import gmd.amcharts4.demo.client.application.navigation.HeaderLink;
 import gmd.amcharts4.demo.client.resources.AppResources;
+import gwt.material.design.addins.client.dark.AddinsDarkThemeLoader;
 import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.theme.DarkTheme;
 import gwt.material.design.amcore.client.theme.MaterialTheme;
@@ -47,6 +48,8 @@ import gwt.material.design.client.pwa.serviceworker.ServiceWorkerManager;
 import gwt.material.design.client.pwa.serviceworker.js.ServiceWorkerOption;
 import gwt.material.design.client.theme.dark.ColorScheme;
 import gwt.material.design.client.theme.dark.ColorSchemeChangeEvent;
+import gwt.material.design.client.theme.dark.CoreDarkThemeLoader;
+import gwt.material.design.client.theme.dark.DarkThemeManager;
 import gwt.material.design.client.ui.*;
 
 import java.util.List;
@@ -78,6 +81,12 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers>
     @Override
     protected void onAttach() {
         super.onAttach();
+
+        // Dark Theme Mode
+        DarkThemeManager.get()
+            .register(new CoreDarkThemeLoader())
+            .register(new AddinsDarkThemeLoader())
+            .load();
 
         // Enable PWA
         if (PwaManager.isPwaSupported()) {
