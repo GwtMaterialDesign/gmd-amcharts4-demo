@@ -1,7 +1,5 @@
 #!/bin/bash
 set -ev
-echo -e "Demo deploy started"
-
 if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
 if [[ -z "$GH_TOKEN" ]]; then
@@ -25,24 +23,13 @@ rm -rf gh-pages
 git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesign/gmd-amcharts4-demo gh-pages > /dev/null
 cd gh-pages
 
-# remove the GwtMaterialDemo directories from git.
-if [[ -d ./GmdAmCharts4Demo ]]; then
-git rm -rf ./GmdAmCharts4Demo
-fi
-if [[ -f ./index.html ]]; then
-git rm -rf ./index.html
-fi
-if [[ -d ./META-INF ]]; then
-git rm -rf ./META-INF
-fi
-if [[ -d ./WEB-INF ]]; then
-git rm -rf ./WEB-INF
+# remove the GmdCoreDemo directories from git.
+if [[ -d ./ ]]; then
+git rm -rf ./
 fi
 
 # copy the new GWTMaterialPattern the snapshot dir.
 unzip -u $TRAVIS_BUILD_DIR/target/GmdAmCharts4Demo*.war -d ./
-rm -rf ./META-INF
-rm -rf ./WEB-INF
 
 git add -f .
 git commit -m "Auto-push pattern to gh-pages successful. (Travis build: $TRAVIS_BUILD_NUMBER)"
