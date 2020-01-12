@@ -8,11 +8,11 @@ image.src = "https://gwtmaterialdesign.github.io/gmd-amcharts4-demo/launcher-ico
 
 var title = document.createElement("span");
 title.className = "title";
-title.innerHTML = "gwt-material-am4charts";
+title.innerHTML = "gwt-material-design";
 
 var description = document.createElement("span");
 description.className = "description";
-description.innerHTML = "Version 1.0";
+description.innerHTML = "version 2.2";
 
 var progress = document.createElement("div");
 progress.className = "progress";
