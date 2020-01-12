@@ -19,7 +19,6 @@ public class AppServiceWorkerManager extends ServiceWorkerManager {
 
     @Override
     public boolean onNewServiceWorkerFound(ServiceEvent event, ServiceWorker serviceWorker) {
-        Window.Location.reload();
         MaterialToast.fireToast("New Updates Installed");
         return super.onNewServiceWorkerFound(event, serviceWorker);
     }
