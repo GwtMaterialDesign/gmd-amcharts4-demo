@@ -12,19 +12,19 @@ title.innerHTML = "gwt-material-design";
 
 var description = document.createElement("span");
 description.className = "description";
-description.innerHTML = "version 2.2";
+description.innerHTML = "version 2.3.0";
 
 var progress = document.createElement("div");
 progress.className = "progress";
 
 var progressFill = document.createElement("div");
 progressFill.className = "indeterminate";
-progress.append(progressFill);
+progress.appendChild(progressFill);
 
-splashContent.append(image);
-splashContent.append(title);
-splashContent.append(description);
-splashContent.append(progress);
+splashContent.appendChild(image);
+splashContent.appendChild(title);
+splashContent.appendChild(description);
+splashContent.appendChild(progress);
 
-splashcontainer.append(splashContent);
+splashcontainer.appendChild(splashContent);
 document.body.appendChild(splashcontainer);
