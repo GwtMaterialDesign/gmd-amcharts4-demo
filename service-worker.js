@@ -1,9 +1,9 @@
-var cacheName = 'cache_1578869379296';
+var cacheName = 'cache_1578904443980';
 
 var filesToCache = [  
 '/gmd-amcharts4-demo/',
 
-'GmdAmCharts4Demo/5DB5681D9CCC525397828C5D46EB4723.cache.js',
+'GmdAmCharts4Demo/06BC8D62EBD918365789435ACA35B873.cache.js',
 
 'GmdAmCharts4Demo/GmdAmCharts4Demo.devmode.js',
 
