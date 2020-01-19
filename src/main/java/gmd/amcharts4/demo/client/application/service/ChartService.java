@@ -28,6 +28,8 @@ import gmd.amcharts4.demo.client.application.charts.gauges.ClockDemo;
 import gmd.amcharts4.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
 import gmd.amcharts4.demo.client.application.charts.maps.*;
 import gmd.amcharts4.demo.client.application.charts.misc.*;
+import gmd.amcharts4.demo.client.application.charts.plugin.CurveChartDemo;
+import gmd.amcharts4.demo.client.application.charts.plugin.SerpentineChartDemo;
 import gmd.amcharts4.demo.client.application.charts.types.*;
 
 import java.util.ArrayList;
@@ -79,6 +81,10 @@ public class ChartService {
     }
 
     private static void generateCharts() {
+        //TODO: Plugins
+        charts.add(new SerpentineChartDemo());
+        charts.add(new CurveChartDemo());
+
         charts.add(new SimplePieChartDemo());
         charts.add(new BubbleChartDemo());
         charts.add(new ChordDiagramNonRibbonDemo());

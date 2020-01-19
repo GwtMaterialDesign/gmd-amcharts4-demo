@@ -41,6 +41,7 @@
     <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>
     <inherits name="gwt.material.design.incubator.AddinsIncubator"/>
     <inherits name="gwt.material.design.incubator.FontAwesomeResources"/>
+    <inherits name="gwt.material.design.amplugin.timeline.Timeline"/>
 
     <inherits name="com.google.gwt.precompress.Precompress"/>
 
