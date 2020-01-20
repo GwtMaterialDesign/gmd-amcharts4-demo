@@ -43,8 +43,10 @@
 
     <!-- AmCharts -->
     <inherits name="gwt.material.design.amcharts.GwtMaterialAmCharts"/>
+    <inherits name="gwt.material.design.amplugin.annotation.Annotation"/>
     <inherits name="gwt.material.design.amplugin.timeline.Timeline"/>
     <inherits name="gwt.material.design.amplugin.bullets.Bullets"/>
+    <inherits name="gwt.material.design.amplugin.wordcloud.WordCloud"/>
 
     <inherits name="com.google.gwt.precompress.Precompress"/>
 

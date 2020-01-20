@@ -28,9 +28,11 @@ import gmd.amcharts4.demo.client.application.charts.gauges.ClockDemo;
 import gmd.amcharts4.demo.client.application.charts.gauges.ClockWithTwoFacesDemo;
 import gmd.amcharts4.demo.client.application.charts.maps.*;
 import gmd.amcharts4.demo.client.application.charts.misc.*;
+import gmd.amcharts4.demo.client.application.charts.plugin.annotation.AnnotationDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.bullet.SimpleBulletDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.timeline.CurveChartDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.timeline.SerpentineChartDemo;
+import gmd.amcharts4.demo.client.application.charts.plugin.wordcloud.WordCloudDemo;
 import gmd.amcharts4.demo.client.application.charts.types.*;
 
 import java.util.ArrayList;
@@ -42,12 +44,14 @@ public class ChartService {
     static List<ChartDemo> maps = new ArrayList<>();
     static List<ChartDemo> gauges = new ArrayList<>();
     static List<ChartDemo> data = new ArrayList<>();
+    static List<ChartDemo> plugins = new ArrayList<>();
 
     static {
         generateCharts();
         generateMaps();
         generateGauges();
         generateDataChart();
+        generatePlugins();
     }
 
     private static void generateDataChart() {
@@ -78,15 +82,9 @@ public class ChartService {
         //TODO: Flight Routes
         //TODO: Location Sensitive Map
         //TODO: Group Countries Map
-
     }
 
     private static void generateCharts() {
-        //TODO: Plugins
-        charts.add(new SerpentineChartDemo());
-        charts.add(new CurveChartDemo());
-        charts.add(new SimpleBulletDemo());
-
         charts.add(new SimplePieChartDemo());
         charts.add(new BubbleChartDemo());
         charts.add(new ChordDiagramNonRibbonDemo());
@@ -126,6 +124,18 @@ public class ChartService {
         charts.add(new ChartWithGapsDemo());
     }
 
+    protected static void generatePlugins() {
+        plugins.add(new WordCloudDemo());
+        plugins.add(new AnnotationDemo());
+        plugins.add(new SerpentineChartDemo());
+        plugins.add(new CurveChartDemo());
+        plugins.add(new SimpleBulletDemo());
+    }
+
+    public static List<ChartDemo> getPlugins() {
+        return plugins;
+    }
+
     public static List<ChartDemo> getCharts() {
         return charts;
     }
@@ -159,4 +169,7 @@ public class ChartService {
         return getDataChart().get(index);
     }
 
+    public static ChartDemo getPlugin(int id) {
+        return getPlugins().get(id);
+    }
 }

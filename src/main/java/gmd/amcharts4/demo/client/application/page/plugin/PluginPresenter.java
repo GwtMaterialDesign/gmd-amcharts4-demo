@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.amcharts4.demo.client.application.page.maps;
+package gmd.amcharts4.demo.client.application.page.plugin;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -34,7 +34,7 @@ import gmd.amcharts4.demo.client.place.NameTokens;
 
 import java.util.List;
 
-public class MapsPresenter extends Presenter<MapsPresenter.MyView, MapsPresenter.MyProxy>
+public class PluginPresenter extends Presenter<PluginPresenter.MyView, PluginPresenter.MyProxy>
         implements ApplyThemeEvent.ApplyThemeHandler {
 
     interface MyView extends View {
@@ -42,12 +42,12 @@ public class MapsPresenter extends Presenter<MapsPresenter.MyView, MapsPresenter
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.MAPS)
-    interface MyProxy extends ProxyPlace<MapsPresenter> {
+    @NameToken(NameTokens.PLUGINS)
+    interface MyProxy extends ProxyPlace<PluginPresenter> {
     }
 
     @Inject
-    MapsPresenter(
+    PluginPresenter(
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
@@ -65,11 +65,11 @@ public class MapsPresenter extends Presenter<MapsPresenter.MyView, MapsPresenter
     protected void onReveal() {
         super.onReveal();
 
-        getView().build(ChartService.getMaps());
+        getView().build(ChartService.getPlugins());
     }
 
     @Override
     public void onApplyThemeEvent(ApplyThemeEvent event) {
-        getView().build(ChartService.getMaps());
+        getView().build(ChartService.getPlugins());
     }
 }

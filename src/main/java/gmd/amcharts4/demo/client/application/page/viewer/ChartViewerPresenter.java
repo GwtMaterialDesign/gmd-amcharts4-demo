@@ -87,6 +87,8 @@ public class ChartViewerPresenter extends Presenter<ChartViewerPresenter.MyView,
                 demo = ChartService.getGauge(id);
             } else if (type.equals(NameTokens.DATA)) {
                 demo = ChartService.getDataChart(id);
+            } else if (type.equals(NameTokens.PLUGINS)) {
+                demo = ChartService.getPlugin(id);
             }
 
             if (demo != null) {

@@ -130,7 +130,7 @@ public class SerpentineChartDemo implements ChartDemo {
 
     @Override
     public String getImage() {
-        return null;
+        return "https://www.amcharts.com/wp-content/uploads/2019/09/demo_14372_none-1024x690.png";
     }
 
     @Override

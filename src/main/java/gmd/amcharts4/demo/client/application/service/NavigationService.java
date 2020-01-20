@@ -33,6 +33,7 @@ public class NavigationService {
         headerLinks.add(new HeaderLink("Maps", NameTokens.MAPS));
         headerLinks.add(new HeaderLink("Gauge", NameTokens.GAUGES));
         headerLinks.add(new HeaderLink("Data", NameTokens.DATA));
+        headerLinks.add(new HeaderLink("Plugins", NameTokens.PLUGINS));
         return headerLinks;
     }
 }

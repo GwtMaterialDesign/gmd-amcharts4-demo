@@ -70,6 +70,6 @@ public class GaugePresenter extends Presenter<GaugePresenter.MyView, GaugePresen
 
     @Override
     public void onApplyThemeEvent(ApplyThemeEvent event) {
-        getView().build(ChartService.getCharts());
+        getView().build(ChartService.getGauges());
     }
 }

@@ -70,6 +70,6 @@ public class MiscPresenter extends Presenter<MiscPresenter.MyView, MiscPresenter
 
     @Override
     public void onApplyThemeEvent(ApplyThemeEvent event) {
-        getView().build(ChartService.getCharts());
+        getView().build(ChartService.getDataChart());
     }
 }
