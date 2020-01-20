@@ -1,4 +1,4 @@
-package gmd.amcharts4.demo.client.application.charts.plugin;
+package gmd.amcharts4.demo.client.application.charts.plugin.timeline;
 
 import java.util.Date;
 

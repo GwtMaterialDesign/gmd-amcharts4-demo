@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package gmd.amcharts4.demo.client.application.charts.plugin;
+package gmd.amcharts4.demo.client.application.charts.plugin.timeline;
 
 import com.google.gwt.user.client.ui.Widget;
 import gmd.amcharts4.demo.client.application.charts.ChartDemo;

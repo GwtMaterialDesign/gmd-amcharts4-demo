@@ -36,12 +36,15 @@
     <!--GWT Material-->
     <inherits name="gwt.material.design.GwtMaterialBasicWithJQuery"/>
     <inherits name="gwt.material.design.themes.ThemeBlue"/>
-    <inherits name="gwt.material.design.amcharts.GwtMaterialAmCharts"/>
     <inherits name="gwt.material.design.ammaps.GwtMaterialAmMaps"/>
     <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>
     <inherits name="gwt.material.design.incubator.AddinsIncubator"/>
     <inherits name="gwt.material.design.incubator.FontAwesomeResources"/>
+
+    <!-- AmCharts -->
+    <inherits name="gwt.material.design.amcharts.GwtMaterialAmCharts"/>
     <inherits name="gwt.material.design.amplugin.timeline.Timeline"/>
+    <inherits name="gwt.material.design.amplugin.bullets.Bullets"/>
 
     <inherits name="com.google.gwt.precompress.Precompress"/>
 

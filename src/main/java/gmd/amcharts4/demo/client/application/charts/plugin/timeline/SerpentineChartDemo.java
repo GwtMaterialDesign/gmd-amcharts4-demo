@@ -17,9 +17,8 @@
  * limitations under the License.
  * #L%
  */
-package gmd.amcharts4.demo.client.application.charts.plugin;
+package gmd.amcharts4.demo.client.application.charts.plugin.timeline;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.json.client.JSONNumber;
 import com.google.gwt.json.client.JSONString;
@@ -27,24 +26,17 @@ import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.user.client.ui.Widget;
 import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Chart;
-import gwt.material.design.amcharts.client.axis.CategoryAxis;
 import gwt.material.design.amcharts.client.axis.DateAxis;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
 import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.constants.Orientation;
 import gwt.material.design.amcore.client.data.ChartData;
 import gwt.material.design.amcore.client.data.DataProvider;
-import gwt.material.design.amcore.client.properties.Point;
-import gwt.material.design.amplugin.timeline.client.chart.CurveChart;
 import gwt.material.design.amplugin.timeline.client.chart.SerpentineChart;
 import gwt.material.design.amplugin.timeline.client.chart.TimelineCharts;
 import gwt.material.design.amplugin.timeline.client.cursor.CurveCursor;
-import gwt.material.design.amplugin.timeline.client.renderer.AxisRendererCurveX;
 import gwt.material.design.amplugin.timeline.client.renderer.AxisRendererCurveY;
-import gwt.material.design.amplugin.timeline.client.resources.TimeLineResources;
-import gwt.material.design.amplugin.timeline.client.series.CurveColumnSeries;
 import gwt.material.design.amplugin.timeline.client.series.CurveStepLineSeries;
-import gwt.material.design.client.MaterialDesignBase;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -127,13 +119,13 @@ public class SerpentineChartDemo implements ChartDemo {
     }
 
     public static List<Visit> getList() {
-        List<Visit> test = new ArrayList<>();
+        List<Visit> data = new ArrayList<>();
         int visits = 100;
         for (int i = 0; i < 24; i++) {
             visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-            test.add(new Visit(new Date(1,1, 118, i, 0), visits));
+            data.add(new Visit(new Date(1,1, 118, i, 0), visits));
         }
-        return test;
+        return data;
     }
 
     @Override
