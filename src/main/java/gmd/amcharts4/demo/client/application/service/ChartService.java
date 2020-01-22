@@ -30,6 +30,7 @@ import gmd.amcharts4.demo.client.application.charts.maps.*;
 import gmd.amcharts4.demo.client.application.charts.misc.*;
 import gmd.amcharts4.demo.client.application.charts.plugin.annotation.AnnotationDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.bullet.SimpleBulletDemo;
+import gmd.amcharts4.demo.client.application.charts.plugin.forcedirected.ForceDirectedDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.sunburst.SunburstDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.timeline.CurveChartDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.timeline.SerpentineChartDemo;
@@ -126,6 +127,7 @@ public class ChartService {
     }
 
     protected static void generatePlugins() {
+        plugins.add(new ForceDirectedDemo());
         plugins.add(new SunburstDemo());
         plugins.add(new WordCloudDemo());
         plugins.add(new AnnotationDemo());
