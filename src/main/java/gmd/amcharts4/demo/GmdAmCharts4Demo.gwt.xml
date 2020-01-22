@@ -49,6 +49,7 @@
     <inherits name="gwt.material.design.amplugin.wordcloud.WordCloud"/>
     <inherits name="gwt.material.design.amplugin.sunburst.Sunburst"/>
     <inherits name="gwt.material.design.amplugin.forcedirected.ForceDirected"/>
+    <inherits name="gwt.material.design.amplugin.regression.Regression"/>
 
     <inherits name="com.google.gwt.precompress.Precompress"/>
 
