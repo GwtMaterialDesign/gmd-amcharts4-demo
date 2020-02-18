@@ -75,7 +75,7 @@ public class PictorialColumnChart implements ChartDemo {
         series.dataFields.categoryX = "category";
         series.columns.template.disabled = true;
 
-        Bullet bullet = series.bullets.push(new Bullet());
+        Bullet bullet = (Bullet) series.bullets.push(new Bullet());
         bullet.defaultState.properties.opacity = 0.5;
 
         SpriteState<SpriteProperties> hoverState = bullet.states.create("hover");

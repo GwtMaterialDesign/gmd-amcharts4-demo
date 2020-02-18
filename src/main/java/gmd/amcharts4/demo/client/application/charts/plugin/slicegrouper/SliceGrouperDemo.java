@@ -63,7 +63,7 @@ public class SliceGrouperDemo implements ChartDemo {
 
     @Override
     public String getImage() {
-        return null;
+        return "https://www.amcharts.com/docs/v4/wp-content/uploads/sites/2/2019/04/2019-04-08_23-14-30.gif";
     }
 
     @Override

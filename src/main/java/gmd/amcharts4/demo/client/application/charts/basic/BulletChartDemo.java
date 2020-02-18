@@ -184,7 +184,7 @@ public class BulletChartDemo implements ChartDemo {
         series2.dataFields.categoryY = "category";
         series2.strokeWidth = 0;
 
-        Bullet bullet = series2.bullets.push(new Bullet());
+        Bullet bullet = (Bullet) series2.bullets.push(new Bullet());
         Line line = (Line) bullet.createChild(Am4Core.Line);
         line.x1 = 0;
         line.y1 = -40;
