@@ -37,6 +37,7 @@ import gmd.amcharts4.demo.client.application.charts.plugin.slicegrouper.SliceGro
 import gmd.amcharts4.demo.client.application.charts.plugin.sunburst.SunburstDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.timeline.CurveChartDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.timeline.SerpentineChartDemo;
+import gmd.amcharts4.demo.client.application.charts.plugin.venn.VennDiagramDemo;
 import gmd.amcharts4.demo.client.application.charts.plugin.wordcloud.WordCloudDemo;
 import gmd.amcharts4.demo.client.application.charts.types.*;
 
@@ -130,6 +131,7 @@ public class ChartService {
     }
 
     protected static void generatePlugins() {
+        plugins.add(new VennDiagramDemo());
         plugins.add(new OverlapBusterDemo());
         plugins.add(new SliceGrouperDemo());
         plugins.add(new RegressionDemo());
