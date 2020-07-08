@@ -31,6 +31,7 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import gmd.amcharts4.demo.client.application.events.ApplyThemeEvent;
 import gmd.amcharts4.demo.client.application.navigation.HeaderLink;
 import gmd.amcharts4.demo.client.application.service.NavigationService;
+import gwt.material.design.client.JQueryMigrate;
 import gwt.material.design.client.theme.dark.ColorScheme;
 import gwt.material.design.client.theme.dark.ColorSchemeChangeEvent;
 
@@ -73,6 +74,10 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         super.onBind();
 
         getView().renderHeaderLinks(NavigationService.getHeaderLinks());
+
+        // TODO: Turn off later before merging to master.
+        // Load JQuery Migrate Plugin
+        JQueryMigrate.load(true);
     }
 
     @Override
