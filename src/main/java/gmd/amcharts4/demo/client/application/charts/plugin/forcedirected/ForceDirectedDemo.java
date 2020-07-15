@@ -60,8 +60,9 @@ public class ForceDirectedDemo implements ChartDemo {
         ForceDirectedLink linkTemplate = networkSeries.links.template;
         linkTemplate.strokeWidth = 1;
         SpriteState<ForceDirectedLinkProperties> linkHoverState = linkTemplate.states.create("hover");
-        linkHoverState.properties.strokeOpacity = 1;
-        linkHoverState.properties.strokeWidth = 2;
+        //TODO: Issue
+        /*linkHoverState.properties.strokeOpacity = 1;
+        linkHoverState.properties.strokeWidth = 2;*/
 
         nodeTemplate.events.on("over", event -> {
            /* var dataItem = event.target.dataItem;

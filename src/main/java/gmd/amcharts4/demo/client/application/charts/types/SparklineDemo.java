@@ -41,6 +41,7 @@ import gwt.material.design.amcore.client.base.Percent;
 import gwt.material.design.amcore.client.base.Slice;
 import gwt.material.design.amcore.client.color.Color;
 import gwt.material.design.amcore.client.color.ColorSet;
+import gwt.material.design.amcore.client.color.Fill;
 
 public class SparklineDemo implements ChartDemo {
 
@@ -179,7 +180,7 @@ public class SparklineDemo implements ChartDemo {
         pieSeries.ticks.template.disabled = true;
         pieSeries.slices.template.fill = color;
 
-        Adapter<Color, Slice> adapter =  pieSeries.slices.template.adapter;
+        Adapter<Fill, Slice> adapter =  pieSeries.slices.template.adapter;
         adapter.add("fill", (fill, target) -> {
             Color color1 = fill;
             return color1.lighten(0.1 * target.dataItem.index);

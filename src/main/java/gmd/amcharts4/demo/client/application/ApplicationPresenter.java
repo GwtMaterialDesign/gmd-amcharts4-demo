@@ -78,6 +78,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         // TODO: Turn off later before merging to master.
         // Load JQuery Migrate Plugin
         JQueryMigrate.load(true);
+        JQueryMigrate.migrateMute = true;
     }
 
     @Override

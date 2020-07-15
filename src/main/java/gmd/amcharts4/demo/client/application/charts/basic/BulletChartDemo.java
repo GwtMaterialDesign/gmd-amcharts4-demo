@@ -27,7 +27,6 @@ import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.XYChart;
-import gwt.material.design.amcharts.client.axis.AxisLabel;
 import gwt.material.design.amcharts.client.axis.CategoryAxis;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
 import gwt.material.design.amcharts.client.bullet.Bullet;
@@ -35,7 +34,6 @@ import gwt.material.design.amcharts.client.dataitem.ValueAxisDataItem;
 import gwt.material.design.amcharts.client.series.ColumnSeries;
 import gwt.material.design.amcharts.client.series.LineSeries;
 import gwt.material.design.amcore.client.Am4Core;
-import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.Container;
 import gwt.material.design.amcore.client.base.Percent;
 import gwt.material.design.amcore.client.color.Color;
@@ -135,13 +133,7 @@ public class BulletChartDemo implements ChartDemo {
         valueAxis.min = 0;
         valueAxis.max = 100;
         valueAxis.strictMinMax = true;
-
-        Adapter<AxisLabel, AxisLabel> adapter = valueAxis.renderer.labels.template.adapter ;
-        adapter.add("text", (source, labelAdapter) -> {
-            //TODO: Find a way to workaround this one
-            AxisLabel label = source;
-            return label + "%";
-        });
+        valueAxis.renderer.labels.template.adapter.add("text", (source, labelAdapter) -> source + "%");
 
       /*
         In order to create separate background colors for each range of values,
