@@ -35,7 +35,6 @@ import gwt.material.design.amcore.client.base.Sprite;
 import gwt.material.design.amcore.client.color.Fill;
 import gwt.material.design.amcore.client.scrollbar.Scrollbar;
 import gwt.material.design.amcore.client.state.SpriteState;
-import gwt.material.design.client.ui.MaterialToast;
 
 public class CurvedColumnsDemo implements ChartDemo {
 
@@ -70,10 +69,7 @@ public class CurvedColumnsDemo implements ChartDemo {
 
         // Add distinctive colors for each column using adapter
         Adapter<Fill, Sprite> adapter = series.columns.template.adapter;
-        adapter.add("fill", (fill, target) -> {
-            MaterialToast.fireToast(fill + "");
-            return chart.colors.getIndex(((Sprite) target).dataItem.index);
-        });
+        adapter.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
 
         chart.scrollbarX = new Scrollbar();
 
