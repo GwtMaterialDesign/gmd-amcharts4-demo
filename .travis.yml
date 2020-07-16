@@ -28,7 +28,7 @@ before_install:
 - mvn install -DskipTests=true -DdryRun=true
 - cd ..
 # install the gwt-material-addins library
-- git clone -b release_2.3.1 https://github.com/GwtMaterialDesign/gwt-material-amcharts4.git
+- git clone -b upgrade/jquery https://github.com/GwtMaterialDesign/gwt-material-amcharts4.git
 - cd gwt-material-amcharts4
 - mvn install -DskipTests=true -DdryRun=true
 - cd ..
