@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,7 +31,6 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import gmd.amcharts4.demo.client.application.events.ApplyThemeEvent;
 import gmd.amcharts4.demo.client.application.navigation.HeaderLink;
 import gmd.amcharts4.demo.client.application.service.NavigationService;
-import gwt.material.design.client.JQueryMigrate;
 import gwt.material.design.client.theme.dark.ColorScheme;
 import gwt.material.design.client.theme.dark.ColorSchemeChangeEvent;
 
@@ -74,11 +73,6 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
         super.onBind();
 
         getView().renderHeaderLinks(NavigationService.getHeaderLinks());
-
-        // TODO: Turn off later before merging to master.
-        // Load JQuery Migrate Plugin
-        JQueryMigrate.load(true);
-        JQueryMigrate.migrateMute = true;
     }
 
     @Override
