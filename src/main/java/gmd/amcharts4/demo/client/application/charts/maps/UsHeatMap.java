@@ -88,8 +88,7 @@ public class UsHeatMap implements ChartDemo {
         maxRange.label.text = "A lot!";
 
         // Blank out internal heat legend value axis labels
-        Adapter<Sprite, Sprite> adapter = heatLegend.valueAxis.renderer.labels.template.adapter;
-        adapter.add("text", (sprite, spriteAdapter) -> "");
+        heatLegend.valueAxis.renderer.labels.template.adapter.add("text", (sprite, spriteAdapter) -> "");
 
         // Configure series tooltip
         MapPolygon polygonTemplate = polygonSeries.mapPolygons.template;
