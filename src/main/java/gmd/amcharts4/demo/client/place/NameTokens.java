@@ -27,4 +27,5 @@ public class NameTokens {
     public static final String DATA = "data";
     public static final String GAUGES = "gauges";
     public static final String VIEWER = "viewer";
+    public static final String PLUGINS = "plugins";
 }

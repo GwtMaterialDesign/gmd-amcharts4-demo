@@ -107,7 +107,7 @@ public class AnimationsAlongLine implements ChartDemo {
         plane.height = 48;
 
 
-        Adapter<MapLineObject, MapLineObject> adapter = plane.adapter;
+        Adapter<Object, MapLineObject> adapter = plane.adapter;
         adapter.add("scale", (object, target) -> 0.5 * (1 - (Math.abs(0.5 - target.position))));
 
         Sprite planeImage = (Sprite) plane.createChild(Am4Core.Sprite);
@@ -131,11 +131,8 @@ public class AnimationsAlongLine implements ChartDemo {
         shadowPlaneImage.fill = new Color("#000");
         shadowPlaneImage.strokeOpacity = 0;
 
-        Adapter<MapLineObject, MapLineObject> adapter1 = shadowPlane.adapter;
-        adapter1.add("scale", (mapLineObject, target) -> {
-            target.opacity = (0.6 - (Math.abs(0.5 - target.position)));
-            return 0.5 - 0.3 * (1 - (Math.abs(0.5 - target.position)));
-        });
+        Adapter<Object, MapLineObject> adapter1 = shadowPlane.adapter;
+        adapter1.add("scale", (mapLineObject, target) -> 0.5 - 0.3 * (1 - (Math.abs(0.5 - target.position))));
 
         // Go!
         flyPlane(plane, planeImage, lineSeries, shadowPlane, shadowLineSeries, shadowPlaneImage);

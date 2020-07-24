@@ -25,13 +25,11 @@ import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.GaugeChart;
-import gwt.material.design.amcharts.client.axis.AxisLabelCircular;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
 import gwt.material.design.amcharts.client.dataitem.ValueAxisDataItem;
 import gwt.material.design.amcharts.client.renderer.AxisRendererCircular;
 import gwt.material.design.amcharts.client.tick.ClockHand;
 import gwt.material.design.amcore.client.Am4Core;
-import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.animation.Animation;
 import gwt.material.design.amcore.client.animation.AnimationOptions;
 import gwt.material.design.amcore.client.base.Percent;
@@ -64,12 +62,7 @@ public class AnimatedGaugeDemo implements ChartDemo {
         rendererCircular1.ticks.template.length = 10;
         rendererCircular1.grid.template.disabled = true;
         rendererCircular1.labels.template.radius = 40;
-
-        Adapter<AxisLabelCircular, AxisLabelCircular> adapter = rendererCircular1.labels.template.adapter;
-        adapter.add("text", (source, target) -> {
-            AxisLabelCircular label = source;
-            return label + "%";
-        });
+        rendererCircular1.labels.template.adapter.add("text", (source, target) -> source + "%");
 
         // Axis for ranges
         ColorSet colorSet = new ColorSet();

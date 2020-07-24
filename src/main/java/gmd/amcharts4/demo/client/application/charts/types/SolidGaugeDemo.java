@@ -24,7 +24,6 @@ import gmd.amcharts4.demo.client.application.charts.ChartDemo;
 import gwt.material.design.amcharts.client.Am4Charts;
 import gwt.material.design.amcharts.client.Chart;
 import gwt.material.design.amcharts.client.RadarChart;
-import gwt.material.design.amcharts.client.axis.Axis;
 import gwt.material.design.amcharts.client.axis.AxisLabel;
 import gwt.material.design.amcharts.client.axis.CategoryAxis;
 import gwt.material.design.amcharts.client.axis.ValueAxis;
@@ -35,6 +34,7 @@ import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.InterfaceColorSet;
 import gwt.material.design.amcore.client.base.Percent;
+import gwt.material.design.amcore.client.color.Fill;
 
 public class SolidGaugeDemo implements ChartDemo {
 
@@ -62,7 +62,7 @@ public class SolidGaugeDemo implements ChartDemo {
         categoryAxis.renderer.labels.template.horizontalCenter = "right";
         categoryAxis.renderer.labels.template.fontWeight = "500";
 
-        Adapter<AxisLabel, AxisLabel> adapter = categoryAxis.renderer.labels.template.adapter;
+        Adapter<Fill, AxisLabel> adapter = categoryAxis.renderer.labels.template.adapter;
         adapter.add("fill", (fill, target) -> (target.dataItem.index >= 0) ? chart.colors.getIndex(target.dataItem.index) : fill);
 
         categoryAxis.renderer.minGridDistance = 10;
@@ -92,7 +92,7 @@ public class SolidGaugeDemo implements ChartDemo {
         series2.columns.template.tooltipText = "{category}: [bold]{value}[/]";
         series2.columns.template.radarColumn.cornerRadius = 20;
 
-        Adapter<Column, Column> adapter1 = series2.columns.template.adapter;
+        Adapter<Fill, Column> adapter1 = series2.columns.template.adapter;
         adapter1.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
 
         // Add cursor

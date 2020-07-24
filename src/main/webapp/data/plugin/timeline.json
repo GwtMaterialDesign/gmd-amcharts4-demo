@@ -1,0 +1,38 @@
+[
+  {
+    "country": "Lithuania",
+    "value": 501
+  },
+  {
+    "country": "Czechia",
+    "value": 301
+  },
+  {
+    "country": "Ireland",
+    "value": 201
+  },
+  {
+    "country": "Germany",
+    "value": 165
+  },
+  {
+    "country": "Australia",
+    "value": 139
+  },
+  {
+    "country": "Austria",
+    "value": 128
+  },
+  {
+    "country": "UK",
+    "value": 99
+  },
+  {
+    "country": "Belgium",
+    "value": 60
+  },
+  {
+    "country": "Netherlands",
+    "value": 50
+  }
+]

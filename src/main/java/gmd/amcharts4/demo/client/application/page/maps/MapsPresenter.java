@@ -70,6 +70,6 @@ public class MapsPresenter extends Presenter<MapsPresenter.MyView, MapsPresenter
 
     @Override
     public void onApplyThemeEvent(ApplyThemeEvent event) {
-        getView().build(ChartService.getCharts());
+        getView().build(ChartService.getMaps());
     }
 }

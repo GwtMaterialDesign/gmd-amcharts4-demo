@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -34,7 +34,7 @@ import gwt.material.design.amcharts.client.series.RadarColumnSeries;
 import gwt.material.design.amcore.client.Am4Core;
 import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.Percent;
-import gwt.material.design.amcore.client.color.Color;
+import gwt.material.design.amcore.client.color.Fill;
 
 public class RadialHistogramDemo implements ChartDemo {
 
@@ -80,8 +80,11 @@ public class RadialHistogramDemo implements ChartDemo {
 
         series.tooltip.pointerOrientation = "vertical";
 
-        Adapter<Color, Column> adapter = series.columns.template.adapter;
-        adapter.add("fill", (fill, target) -> chart.colors.getIndex(target.dataItem.index));
+        Adapter<Fill, Column> adapter = series.columns.template.adapter;
+        adapter.add("fill", (fill, target) -> {
+            //chart.colors.getIndex(target.dataItem.index)
+            return chart.colors.getIndex(target.dataItem.index);
+        });
 
         // Cursor
         chart.cursor = new RadarCursor();

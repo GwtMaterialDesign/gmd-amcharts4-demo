@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev
-if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && [ "$TRAVIS_BRANCH" == "release_2.4.0" ]; then
 
 if [[ -z "$GH_TOKEN" ]]; then
 echo -e "GH_TOKEN is not set"
@@ -23,12 +23,12 @@ rm -rf gh-pages
 git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesign/gmd-amcharts4-demo gh-pages > /dev/null
 cd gh-pages
 
-# remove the GmdCoreDemo directories from git.
+# remove the GmdAmCharts4Demo Snapshot directories from git.
 if [[ -d ./ ]]; then
 git rm -rf ./
 fi
 
-# copy the new GWTMaterialPattern the snapshot dir.
+# copy the new GmdAmCharts4Demo the snapshot dir.
 unzip -u $TRAVIS_BUILD_DIR/target/GmdAmCharts4Demo*.war -d ./
 
 git add -f .

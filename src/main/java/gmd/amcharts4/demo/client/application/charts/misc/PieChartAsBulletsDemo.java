@@ -16,6 +16,7 @@ import gwt.material.design.amcore.client.adapter.Adapter;
 import gwt.material.design.amcore.client.base.Percent;
 import gwt.material.design.amcore.client.base.Slice;
 import gwt.material.design.amcore.client.color.Color;
+import gwt.material.design.amcore.client.color.Fill;
 
 public class PieChartAsBulletsDemo implements ChartDemo {
 
@@ -58,11 +59,8 @@ public class PieChartAsBulletsDemo implements ChartDemo {
 
 
         // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
-        Adapter<Color, Column> adapter =  columnTemplate.adapter;
-        adapter.add("fill", (column, target) -> {
-            Color color = chart.colors.getIndex(target.dataItem.index * 3);
-            return color;
-        });
+        Adapter<Fill, Column> adapter = columnTemplate.adapter;
+        adapter.add("fill", (column, target) -> chart.colors.getIndex(target.dataItem.index * 3));
 
         // create pie chart as a column child
         PieChart pieChart = (PieChart) series.columns.template.createChild(Am4Charts.PieChart);
@@ -81,10 +79,10 @@ public class PieChartAsBulletsDemo implements ChartDemo {
         pieSeries.slices.template.strokeWidth = 1;
         pieSeries.slices.template.strokeOpacity = 0;
 
-        Adapter<Color, Slice> adapter1 =  pieSeries.slices.template.adapter;
+        Adapter<Fill, Slice> adapter1 = pieSeries.slices.template.adapter;
         adapter1.add("fill", (slice, target) -> new Color("#ffffff"));
 
-        Adapter<Color, Slice> adapter2 = pieSeries.slices.template.adapter ;
+        Adapter<Color, Slice> adapter2 = pieSeries.slices.template.adapter;
         adapter2.add("fillOpacity", (slice, target) -> (target.dataItem.index + 1) * 0.2);
 
         pieSeries.hiddenState.properties.startAngle = -90;

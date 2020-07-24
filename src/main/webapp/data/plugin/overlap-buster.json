@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Rachel",
+    "color": "red",
+    "x": 5,
+    "y": 7,
+    "value": 3108972
+  },
+  {
+    "title": "Monica",
+    "color": "rgb(244,67,54)",
+    "x": 4.9,
+    "y": 6,
+    "value": 33397058
+  },
+  {
+    "title": "Chandler",
+    "color": "rgb(233,30,99)",
+    "x": 6,
+    "y": 7,
+    "value": 3227373
+  },
+  {
+    "title": "Joey",
+    "color": "rgb(156,39,176)",
+    "x": 6,
+    "y": 7,
+    "value": 36485828
+  },
+  {
+    "title": "Phoebe",
+    "color": "rgb(103,58,183)",
+    "x": 5,
+    "y": 5,
+    "value": 20162517
+  },
+  {
+    "title": "Ross",
+    "color": "rgb(33,150,243)",
+    "x": 7,
+    "y": 7,
+    "value": 41118986
+  }
+]

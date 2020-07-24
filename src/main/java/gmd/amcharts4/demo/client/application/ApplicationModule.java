@@ -24,6 +24,7 @@ import gmd.amcharts4.demo.client.application.page.charttypes.ChartTypesModule;
 import gmd.amcharts4.demo.client.application.page.gauge.GaugeModule;
 import gmd.amcharts4.demo.client.application.page.maps.MapsModule;
 import gmd.amcharts4.demo.client.application.page.misc.MiscModule;
+import gmd.amcharts4.demo.client.application.page.plugin.PluginModule;
 import gmd.amcharts4.demo.client.application.page.viewer.ChartViewerModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
@@ -35,6 +36,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new GaugeModule());
         install(new MiscModule());
         install(new ChartViewerModule());
+        install(new PluginModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
                 ApplicationPresenter.MyProxy.class);
