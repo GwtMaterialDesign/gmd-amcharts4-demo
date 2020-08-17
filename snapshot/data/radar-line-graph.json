@@ -1,0 +1,62 @@
+[
+  {
+    "date": "Jan 01 2018",
+    "value1": 473,
+    "value2": 640
+  },
+  {
+    "date": "Feb 01 2018",
+    "value1": 471,
+    "value2": 664
+  },
+  {
+    "date": "Mar 01 2018",
+    "value1": 486,
+    "value2": 670
+  },
+  {
+    "date": "Apr 01 2018",
+    "value1": 533,
+    "value2": 680
+  },
+  {
+    "date": "May 01 2018",
+    "value1": 563,
+    "value2": 718
+  },
+  {
+    "date": "Jun 01 2018",
+    "value1": 610,
+    "value2": 724
+  },
+  {
+    "date": "Jul 01 2018",
+    "value1": 624,
+    "value2": 748
+  },
+  {
+    "date": "Aug 01 2018",
+    "value1": 585,
+    "value2": 699
+  },
+  {
+    "date": "Sep 01 2018",
+    "value1": 626,
+    "value2": 662
+  },
+  {
+    "date": "Oct 01 2018",
+    "value1": 675,
+    "value2": 660
+  },
+  {
+    "date": "Nov 01 2018",
+    "value1": 725,
+    "value2": 618
+  },
+  {
+    "date": "Dec 01 2018",
+    "value1": 716,
+    "value2": 657
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "category": "Net revenue",
+    "value": 8786,
+    "open": 0,
+    "stepValue": 8786,
+    "color": "#f44336",
+    "displayValue": 8786
+  },
+  {
+    "category": "Cost of sales",
+    "value": 6000,
+    "open": 8786,
+    "stepValue": 6000,
+    "color": "#e91e63",
+    "displayValue": 2786
+  },
+  {
+    "category": "Operating expenses",
+    "value": 4214,
+    "open": 6000,
+    "stepValue": 4214,
+    "color": "#9c27b0",
+    "displayValue": 1786
+  },
+  {
+    "category": "Amortisation",
+    "value": 3761,
+    "open": 4214,
+    "stepValue": 3761,
+    "color": "#673ab7",
+    "displayValue": 453
+  },
+  {
+    "category": "Income from equity",
+    "value": 5226,
+    "open": 3761,
+    "stepValue": 5226,
+    "color": "#3f51b5",
+    "displayValue": 1465
+  },
+  {
+    "category": "Operating income",
+    "value": 5226,
+    "open": 0,
+    "color": "#2196f3",
+    "displayValue": 5226
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "B",
+    "value": 40,
+    "disabled": true
+  },
+  {
+    "name": "A",
+    "value": 60
+  }
+]
