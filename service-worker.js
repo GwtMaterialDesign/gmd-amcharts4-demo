@@ -1,4 +1,4 @@
-var cacheName = 'cache_1597635222694';
+var cacheName = 'cache_1597635441759';
 
 var filesToCache = [  
 '/gmd-amcharts4-demo/',
