@@ -125,7 +125,7 @@ public class ColumnChartWithImagesDemo implements ChartDemo {
         series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/b]";
 
         // Add bullets
-        Bullet bullet = series.bullets.push(new Bullet());
+        Bullet bullet = (Bullet) series.bullets.push(new Bullet());
         Image image = (Image) bullet.createChild(Am4Core.Image);
         image.horizontalCenter = "middle";
         image.verticalCenter = "bottom";

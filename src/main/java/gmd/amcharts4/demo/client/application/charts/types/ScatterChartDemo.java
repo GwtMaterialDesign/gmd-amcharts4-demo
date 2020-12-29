@@ -62,7 +62,7 @@ public class ScatterChartDemo implements ChartDemo {
         lineSeries2.strokeOpacity = 0;
 
         // Add a bullet
-        Bullet bullet = lineSeries.bullets.push(new Bullet());
+        Bullet bullet = (Bullet) lineSeries.bullets.push(new Bullet());
 
         // Add a triangle to act as am arrow
         Triangle arrow = (Triangle) bullet.createChild(Am4Core.Triangle);
@@ -75,7 +75,7 @@ public class ScatterChartDemo implements ChartDemo {
         arrow.height = 12;
 
         // Add a bullet
-        Bullet bullet2 = lineSeries2.bullets.push(new Bullet());
+        Bullet bullet2 = (Bullet) lineSeries2.bullets.push(new Bullet());
 
         // Add a triangle to act as am arrow
         Triangle arrow2 = (Triangle) bullet2.createChild(Am4Core.Triangle);
