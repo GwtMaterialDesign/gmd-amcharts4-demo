@@ -1,9 +1,9 @@
-var cacheName = 'cache_1609150516406';
+var cacheName = 'cache_1614161086186';
 
 var filesToCache = [  
 '/gmd-amcharts4-demo/',
 
-'GmdAmCharts4Demo/C8C594AE02D142C2A7DF34CEE7AB7720.cache.js',
+'GmdAmCharts4Demo/D57D317B7273D9090538BB3F850615FE.cache.js',
 
 'GmdAmCharts4Demo/GmdAmCharts4Demo.devmode.js',
 
@@ -38,36 +38,6 @@ var filesToCache = [
 'GmdAmCharts4Demo/font/material-icons/MaterialIcons-Regular.woff',
 
 'GmdAmCharts4Demo/font/material-icons/MaterialIcons-Regular.woff2',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Bold.ttf',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Bold.woff',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Bold.woff2',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Light.ttf',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Light.woff',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Light.woff2',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Medium.ttf',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Medium.woff',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Medium.woff2',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Regular.ttf',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Regular.woff',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Regular.woff2',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Thin.ttf',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Thin.woff',
-
-'GmdAmCharts4Demo/font/roboto/Roboto-Thin.woff2',
 
 'GmdAmCharts4Demo/fontawesome-icons/fa-brands-400.eot',
 
