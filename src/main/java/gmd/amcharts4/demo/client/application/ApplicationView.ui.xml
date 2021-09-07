@@ -31,7 +31,7 @@
                         <m:MaterialImage url="https://gwtmaterialdesign.github.io/gmd-amcharts4-demo/launcher-icons/launcher1x.png" alt="logo" float="LEFT" width="60px"/>
                         <m:MaterialPanel>
                             <m:MaterialLabel text="gwt-material-amcharts" fontWeight="BOLD" lineHeight="24" marginTop="12"/>
-                            <m:MaterialLabel text="Version 2.4.2" lineHeight="12" fontSize="0.6em"/>
+                            <m:MaterialLabel text="Version 2.5.0" lineHeight="12" fontSize="0.6em"/>
                         </m:MaterialPanel>
                     </m:MaterialNavBrand>
                     <m:MaterialDarkModeToggle ui:field="darkToggle" float="RIGHT"/>
