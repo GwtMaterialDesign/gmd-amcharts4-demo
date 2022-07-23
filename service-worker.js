@@ -1,9 +1,9 @@
-var cacheName = 'cache_1630994766190';
+var cacheName = 'cache_1658562749770';
 
 var filesToCache = [  
 '/gmd-amcharts4-demo/',
 
-'GmdAmCharts4Demo/9310B810478D08EFFA1500BE87647996.cache.js',
+'GmdAmCharts4Demo/37DCCA19467C505ED89AB3D2F1B136E2.cache.js',
 
 'GmdAmCharts4Demo/GmdAmCharts4Demo.devmode.js',
 
@@ -31,13 +31,7 @@ var filesToCache = [
 
 'GmdAmCharts4Demo/css/materialize.min.css',
 
-'GmdAmCharts4Demo/font/material-icons/MaterialIcons-Regular.eot',
-
 'GmdAmCharts4Demo/font/material-icons/MaterialIcons-Regular.ttf',
-
-'GmdAmCharts4Demo/font/material-icons/MaterialIcons-Regular.woff',
-
-'GmdAmCharts4Demo/font/material-icons/MaterialIcons-Regular.woff2',
 
 'GmdAmCharts4Demo/fontawesome-icons/fa-brands-400.eot',
 
