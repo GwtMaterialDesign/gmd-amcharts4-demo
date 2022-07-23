@@ -61,5 +61,4 @@
     <!-- Comment it if you want permutations per property.
          It increases compilation time -->
     <collapse-all-properties value="true" />
-
 </module>
